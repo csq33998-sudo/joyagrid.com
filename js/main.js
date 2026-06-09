@@ -1,6 +1,6 @@
 (function () {
   const products = window.JOYA_PRODUCTS || [];
-  const destination = "https://maisonlooks.com/en/search";
+  const destination = "https://streetstyle.maisonlooks.com/en/search";
   const categoryQueries = {
     Accessories: "accessories",
     Bags: "bags",
