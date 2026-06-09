@@ -12,8 +12,7 @@
     "T-Shirts": "t shirts"
   };
   const state = {
-    category: "All",
-    query: ""
+    category: "All"
   };
 
   const productGrid = document.querySelector("#productGrid");
@@ -61,11 +60,9 @@
   }
 
   function getVisibleProducts() {
-    const query = state.query.trim().toLowerCase();
     const filtered = products.filter((product) => {
       const inCategory = state.category === "All" || product.category === state.category;
-      const searchable = [product.name, product.category, product.mood, ...product.tags].join(" ").toLowerCase();
-      return inCategory && (!query || searchable.includes(query));
+      return inCategory;
     });
 
     return filtered;
@@ -115,11 +112,6 @@
     if (!button) return;
     state.category = button.dataset.category;
     renderCategories();
-    renderProducts();
-  });
-
-  searchInput.addEventListener("input", (event) => {
-    state.query = event.target.value;
     renderProducts();
   });
 
