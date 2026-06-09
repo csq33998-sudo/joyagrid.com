@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JoyaGoo Spreadsheet - Street Style Finds for Maison Looks</title>
+    <meta
+      name="description"
+      content="Explore a JoyaGoo spreadsheet style discovery board for streetwear outfits, sneakers, accessories, QC guides, and Maison Looks search results."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="JoyaGoo Spreadsheet - Street Style Finds for Maison Looks" />
+    <meta
+      property="og:description"
+      content="Explore a JoyaGoo spreadsheet style discovery board for streetwear outfits, sneakers, accessories, QC guides, and Maison Looks search results."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://joyagrid.com/" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:image" content="/assets/joyagoo-spreadsheet-og.png" />
+    <meta property="og:image:alt" content="JoyaGoo spreadsheet" />
+    <link rel="stylesheet" href="styles.css?v=2" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://joyagrid.com/#organization",
+          "name": "Joya Grid",
+          "url": "https://joyagrid.com",
+          "logo": "https://joyagrid.com/assets/joyagoo-spreadsheet-logo.png"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://joyagrid.com/#website",
+          "url": "https://joyagrid.com/",
+          "name": "JoyaGoo Spreadsheet - Joya Grid",
+          "alternateName": [
+            "JoyaGoo Spreadsheet",
+            "Joya Grid"
+          ],
+          "description": "Explore a JoyaGoo spreadsheet style discovery board for streetwear outfits, sneakers, accessories, QC guides, and Maison Looks search results.",
+          "publisher": {
+            "@id": "https://joyagrid.com/#organization"
+          },
+          "inLanguage": "en"
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="home-page">
+    <a class="skip-link" href="#finds">Skip to finds</a>
+
+    <header class="site-header" data-elevated="false">
+      <a class="brand" href="/" aria-label="JoyaGoo spreadsheet home">
+        <img class="brand-mark" src="/assets/joyagoo-icon-64.png" alt="JoyaGoo spreadsheet" width="42" height="42" />
+        <span>
+          <strong>Joya Grid</strong>
+          <small>Streetstyle finds</small>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="#finds">Finds</a>
+        <a href="#categories">Categories</a>
+        <a href="#guides">Guides</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="header-cta" href="https://maisonlooks.com/en/search?q=" target="_blank" rel="noopener noreferrer">Visit Maison Looks</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <picture>
+          <source
+            srcset="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=85"
+            media="(min-width: 900px)"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=85"
+            alt="JoyaGoo spreadsheet streetwear outfit inspiration"
+          />
+        </picture>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Curated streetwear discovery</p>
+          <h1>JoyaGoo Spreadsheet</h1>
+          <p>
+            Browse outfit ideas, statement sneakers, daily bags, and seasonal street-style pieces, then continue to
+            Maison Looks Streetstyle for the full inspiration feed.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#finds">Browse finds</a>
+            <a class="button ghost" href="https://maisonlooks.com/en/search?q=" target="_blank" rel="noopener noreferrer">Search Maison Looks</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="toolbar" aria-label="Find filters">
+        <div class="toolbar-inner">
+          <label class="search-box">
+            <input id="searchInput" type="search" placeholder="Try cargo, sneaker, denim..." autocomplete="off" />
+          </label>
+          <div class="submit-box">
+            <button id="searchButton" class="search-submit" type="button">Search</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="categories" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Shop by mood</p>
+          <h2>Fast paths into the archive</h2>
+        </div>
+        <div id="categoryTabs" class="category-tabs" role="tablist" aria-label="Product categories"></div>
+      </section>
+
+      <section id="finds" class="section finds-section">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Latest board</p>
+            <h2>Street-style finds</h2>
+          </div>
+          <p id="resultCount" class="muted"></p>
+        </div>
+        <div id="productGrid" class="product-grid" aria-live="polite"></div>
+        <div id="emptyState" class="empty-state" hidden>
+          <h3>No matching finds</h3>
+          <p>Try another keyword or switch back to all categories.</p>
+        </div>
+      </section>
+
+      <section id="guides" class="section guide-section">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Buying guides</p>
+            <h2>Read before you search</h2>
+          </div>
+          <a class="text-link" href="articles.html">View all guides</a>
+        </div>
+        <div class="guide-grid">
+          <article class="guide-card">
+            <p class="guide-meta">Guide - 6 min read</p>
+            <h3>How to use a curated finds board without spreadsheet chaos</h3>
+            <p>Learn how to move from random rows and copied links to a cleaner search-first workflow for outfits, shoes, bags, and seasonal streetwear.</p>
+            <a href="articles/curated-finds-board.html">Read guide</a>
+          </article>
+          <article class="guide-card">
+            <p class="guide-meta">Checklist - 5 min read</p>
+            <h3>QC photo checks for streetwear and sneakers</h3>
+            <p>A practical checklist for reviewing shape, stitching, material texture, tags, color, and packaging before you commit to shipping.</p>
+            <a href="articles/qc-photo-checklist.html">Read checklist</a>
+          </article>
+          <article class="guide-card">
+            <p class="guide-meta">Category guide - 7 min read</p>
+            <h3>What to search for by category</h3>
+            <p>Use category-specific keywords for shoes, hoodies, tees, pants, bags, accessories, and jackets to get cleaner Maison Looks results.</p>
+            <a href="articles/category-search-guide.html">Read category guide</a>
+          </article>
+          <article class="guide-card">
+            <p class="guide-meta">Sizing - 6 min read</p>
+            <h3>How to read measurements before ordering streetwear</h3>
+            <p>Use shoulder, chest, length, waist, and inseam numbers to compare finds against clothes you already own.</p>
+            <a href="articles/measurement-sizing-guide.html">Read sizing guide</a>
+          </article>
+          <article class="guide-card">
+            <p class="guide-meta">Budget - 5 min read</p>
+            <h3>How to estimate shipping and total cost</h3>
+            <p>Item price is only the first number. Learn how weight, packaging, and consolidation affect the final spend.</p>
+            <a href="articles/shipping-cost-guide.html">Read budget guide</a>
+          </article>
+          <article class="guide-card">
+            <p class="guide-meta">FAQ - 6 min read</p>
+            <h3>Common questions before using a finds site</h3>
+            <p>A plain-English FAQ about links, product availability, QC photos, sizing, search terms, and realistic expectations.</p>
+            <a href="articles/frequently-asked-questions.html">Read FAQ</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section about-band">
+        <div>
+          <p class="eyebrow">Promotion model</p>
+          <h2>Built to send style traffic to Maison Looks</h2>
+          <p>
+            This site acts as a lightweight discovery layer: curated categories, searchable outfit cards, strong
+            image previews, and consistent outbound links to Maison Looks search results.
+          </p>
+        </div>
+        <a class="button primary dark" href="https://maisonlooks.com/en/search?q=" target="_blank" rel="noopener noreferrer">Explore Maison Looks</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Joya Grid is an independent inspiration and discovery site. Product imagery and prices are editorial examples.</p>
+      <a href="https://maisonlooks.com/en/search?q=" target="_blank" rel="noopener noreferrer">maisonlooks.com/search</a>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+      <script src="js/i18n.js"></script>
+  </body>
+</html>

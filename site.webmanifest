@@ -1,0 +1,20 @@
+{
+  "name": "JoyaGoo Spreadsheet - Joya Grid",
+  "short_name": "JoyaGoo",
+  "description": "JoyaGoo spreadsheet finds, guides, and searchable streetwear discovery for Maison Looks.",
+  "icons": [
+    {
+      "src": "/assets/joyagoo-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/joyagoo-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0d665f",
+  "background_color": "#fffdf9",
+  "display": "standalone"
+}
