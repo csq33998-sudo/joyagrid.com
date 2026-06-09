@@ -688,7 +688,7 @@
     en: {
       nav: ["Home", "Finds", "Categories", "Guides", "About"],
       brandSub: "Streetstyle finds",
-      visit: "Visit Maison Looks",
+      visit: "Visit Streetstyle",
       footer: "Joya Grid is an independent inspiration and discovery site. Product imagery and prices are editorial examples.",
       footerArticles: "Joya Grid is an independent inspiration and discovery site. We do not sell products or process orders.",
       searchPlaceholder: "Try cargo, sneaker, denim...",
@@ -724,7 +724,7 @@
     es: {
       nav: ["Inicio", "Finds", "Categorias", "Guias", "Acerca"],
       brandSub: "Finds streetstyle",
-      visit: "Visitar Maison Looks",
+      visit: "Visitar Streetstyle",
       footer: "Joya Grid es un sitio independiente de inspiracion y descubrimiento. Las imagenes y precios son ejemplos editoriales.",
       footerArticles: "Joya Grid es un sitio independiente de inspiracion y descubrimiento. No vendemos productos ni procesamos pedidos.",
       searchPlaceholder: "Prueba cargo, sneaker, denim...",
@@ -760,7 +760,7 @@
     fr: {
       nav: ["Accueil", "Finds", "Categories", "Guides", "A propos"],
       brandSub: "Finds streetstyle",
-      visit: "Visiter Maison Looks",
+      visit: "Visiter Streetstyle",
       footer: "Joya Grid est un site independant d'inspiration et de decouverte. Les images et prix sont des exemples editoriaux.",
       footerArticles: "Joya Grid est un site independant d'inspiration et de decouverte. Nous ne vendons pas de produits et ne traitons pas de commandes.",
       searchPlaceholder: "Essayez cargo, sneaker, denim...",
@@ -796,7 +796,7 @@
     de: {
       nav: ["Home", "Finds", "Kategorien", "Guides", "Info"],
       brandSub: "Streetstyle finds",
-      visit: "Maison Looks besuchen",
+      visit: "Streetstyle besuchen",
       footer: "Joya Grid ist eine unabhangige Inspirations- und Discovery-Seite. Bilder und Preise sind redaktionelle Beispiele.",
       footerArticles: "Joya Grid ist eine unabhangige Inspirations- und Discovery-Seite. Wir verkaufen keine Produkte und bearbeiten keine Bestellungen.",
       searchPlaceholder: "Versuche cargo, sneaker, denim...",
@@ -832,7 +832,7 @@
     it: {
       nav: ["Home", "Finds", "Categorie", "Guide", "Info"],
       brandSub: "Find streetstyle",
-      visit: "Visita Maison Looks",
+      visit: "Visita Streetstyle",
       footer: "Joya Grid è un sito indipendente di ispirazione e scoperta. Immagini e prezzi sono esempi editoriali.",
       footerArticles: "Joya Grid è un sito indipendente di ispirazione e scoperta. Non vendiamo prodotti e non gestiamo ordini.",
       searchPlaceholder: "Prova cargo, sneaker, denim...",
@@ -868,7 +868,7 @@
     nl: {
       nav: ["Home", "Finds", "Categorieën", "Gidsen", "Over"],
       brandSub: "Streetstyle finds",
-      visit: "Bezoek Maison Looks",
+      visit: "Bezoek Streetstyle",
       footer: "Joya Grid is een onafhankelijke inspiratie- en ontdekkingssite. Afbeeldingen en prijzen zijn redactionele voorbeelden.",
       footerArticles: "Joya Grid is een onafhankelijke inspiratie- en ontdekkingssite. We verkopen geen producten en verwerken geen bestellingen.",
       searchPlaceholder: "Probeer cargo, sneaker, denim...",
@@ -904,7 +904,7 @@
     pt: {
       nav: ["Início", "Finds", "Categorias", "Guias", "Sobre"],
       brandSub: "Finds streetstyle",
-      visit: "Visitar Maison Looks",
+      visit: "Visitar Streetstyle",
       footer: "Joya Grid é um site independente de inspiração e descoberta. Imagens e preços são exemplos editoriais.",
       footerArticles: "Joya Grid é um site independente de inspiração e descoberta. Não vendemos produtos nem processamos pedidos.",
       searchPlaceholder: "Tente cargo, sneaker, denim...",

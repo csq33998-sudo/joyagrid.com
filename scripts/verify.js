@@ -64,7 +64,7 @@ async function verifyHttpOnly(note) {
     );
   }
   if (!home.body.includes("Joya Grid")) throw new Error("Home page is missing Joya Grid copy");
-  if (!home.body.includes("maisonlooks.com/en/search?q=")) throw new Error("Home page is missing Maison Looks search links");
+  if (!home.body.includes("streetstyle.maisonlooks.com")) throw new Error("Home page is missing Streetstyle links");
   if (!products.body.includes("Washed Bomber Street Layer")) throw new Error("Seed products did not load");
 
   console.log(`verified http home=200 css=200 js=200 products=200${note ? ` (${note})` : ""}`);
@@ -94,8 +94,8 @@ async function verifyWithBrowser() {
   await page.waitForSelector(".product-card");
   const title = await page.locator("h1").textContent();
   const cards = await page.locator(".product-card").count();
-  const cta = await page.locator('a[href*="maisonlooks.com/en/search"]').first().getAttribute("href");
-  const categoryLink = await page.locator('a[href*="maisonlooks.com/en/search?q=shoes"]').first().getAttribute("href");
+  const cta = await page.locator('a[href="https://streetstyle.maisonlooks.com/"]').first().getAttribute("href");
+  const categoryLink = await page.locator('a[href*="streetstyle.maisonlooks.com/en/search?q=shoes"]').first().getAttribute("href");
 
   const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true });
   await mobile.goto(`http://127.0.0.1:${port}/`, { waitUntil: "domcontentloaded" });
@@ -108,7 +108,7 @@ async function verifyWithBrowser() {
 
   if (title !== "Joya Grid") throw new Error(`Unexpected h1: ${title}`);
   if (cards < 8) throw new Error(`Expected at least 8 product cards, found ${cards}`);
-  if (!cta || !cta.includes("q=")) throw new Error("Missing Maison Looks search CTA");
+  if (!cta) throw new Error("Missing Streetstyle CTA");
   if (!categoryLink) throw new Error("Missing shoes search category link");
   if (overflow) throw new Error("Mobile viewport has horizontal overflow");
   if (errors.length) throw new Error(`Console errors: ${errors.join("; ")}`);
