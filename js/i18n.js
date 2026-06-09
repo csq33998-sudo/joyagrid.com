@@ -699,7 +699,7 @@
         heroTitle: "JoyaGoo Spreadsheet",
         heroText: "Browse outfit ideas, statement sneakers, daily bags, and seasonal street-style pieces, then continue to Maison Looks Streetstyle for the full inspiration feed.",
         browse: "Browse finds",
-        searchMaison: "Search Maison Looks",
+        searchMaison: "Search Streetstyle",
         categoriesEyebrow: "Shop by mood",
         categoriesTitle: "Fast paths into the archive",
         findsEyebrow: "Latest board",
