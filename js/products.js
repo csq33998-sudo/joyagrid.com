@@ -6,7 +6,7 @@ window.JOYA_PRODUCTS = [
     price: 89,
     date: "2026-06-01",
     mood: "Editorial pick",
-    image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=82",
+    image: "/assets/product-washed-bomber.png",
     tags: ["washed", "layering", "city"]
   },
   {
@@ -16,7 +16,7 @@ window.JOYA_PRODUCTS = [
     price: 64,
     date: "2026-05-28",
     mood: "Daily rotation",
-    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=82",
+    image: "/assets/product-wide-denim.png",
     tags: ["denim", "relaxed", "blue"]
   },
   {
@@ -26,7 +26,7 @@ window.JOYA_PRODUCTS = [
     price: 72,
     date: "2026-05-27",
     mood: "Most saved",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=82",
+    image: "/assets/product-clean-sneaker.png",
     tags: ["sneaker", "minimal", "white"]
   },
   {
@@ -36,7 +36,7 @@ window.JOYA_PRODUCTS = [
     price: 58,
     date: "2026-05-25",
     mood: "Commute ready",
-    image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=82",
+    image: "/assets/product-studio-tote.png",
     tags: ["bag", "oversized", "utility"]
   },
   {
@@ -46,7 +46,7 @@ window.JOYA_PRODUCTS = [
     price: 49,
     date: "2026-05-22",
     mood: "Soft street",
-    image: "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=82",
+    image: "/assets/product-cropped-hoodie.png",
     tags: ["hoodie", "cropped", "neutral"]
   },
   {
@@ -56,7 +56,7 @@ window.JOYA_PRODUCTS = [
     price: 28,
     date: "2026-05-20",
     mood: "Detail piece",
-    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=82",
+    image: "/assets/product-metal-frame.png",
     tags: ["sunglasses", "metal", "summer"]
   },
   {
@@ -66,7 +66,7 @@ window.JOYA_PRODUCTS = [
     price: 36,
     date: "2026-05-19",
     mood: "Weekend fit",
-    image: "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=900&q=82",
+    image: "/assets/product-graphic-tee.png",
     tags: ["tee", "graphic", "cotton"]
   },
   {
@@ -76,7 +76,7 @@ window.JOYA_PRODUCTS = [
     price: 52,
     date: "2026-05-16",
     mood: "Utility mood",
-    image: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=82",
+    image: "/assets/product-cargo-skirt.png",
     tags: ["cargo", "pockets", "black"]
   }
 ];
