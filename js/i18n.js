@@ -786,7 +786,7 @@
         aboutEyebrow: "Promotion model",
         aboutTitle: "Built to send style traffic to Maison Looks",
         aboutText: "This site acts as a lightweight discovery layer: curated categories, searchable outfit cards, strong image previews, and consistent outbound links to Maison Looks search results.",
-        explore: "Explore Maison Looks"
+        explore: "Explore Street Style"
       },
       list: {
         eyebrow: "Joya Grid guides",
@@ -822,7 +822,7 @@
         aboutEyebrow: "推广模式",
         aboutTitle: "为 Maison Looks 输送风格流量",
         aboutText: "本站是轻量级发现层：精选分类、可搜索穿搭卡片、清晰图片预览，以及稳定跳转到 Maison Looks 搜索结果。",
-        explore: "探索 Maison Looks"
+        explore: "探索 Street Style"
       },
       list: {
         eyebrow: "Joya Grid 指南",
@@ -858,7 +858,7 @@
         aboutEyebrow: "Model promocji",
         aboutTitle: "Zbudowane, aby kierować ruch do Maison Looks",
         aboutText: "Ta strona działa jako lekka warstwa odkrywania: kategorie, wyszukiwalne karty outfitów, mocne podglądy i linki do wyników Maison Looks.",
-        explore: "Odkryj Maison Looks"
+        explore: "Odkryj Street Style"
       },
       list: {
         eyebrow: "Poradniki Joya Grid",
@@ -894,7 +894,7 @@
         aboutEyebrow: "Modelo de promocion",
         aboutTitle: "Creado para enviar trafico de estilo a Maison Looks",
         aboutText: "Este sitio funciona como una capa ligera de descubrimiento: categorias curadas, tarjetas buscables, buenas vistas previas y enlaces consistentes a resultados de Maison Looks.",
-        explore: "Explorar Maison Looks"
+        explore: "Explorar Street Style"
       },
       list: {
         eyebrow: "Guias de Joya Grid",
@@ -930,7 +930,7 @@
         aboutEyebrow: "Modele de promotion",
         aboutTitle: "Concu pour envoyer du trafic style vers Maison Looks",
         aboutText: "Ce site sert de couche de decouverte legere: categories curatives, cartes consultables, apercus visuels solides et liens vers les resultats Maison Looks.",
-        explore: "Explorer Maison Looks"
+        explore: "Explorer Street Style"
       },
       list: {
         eyebrow: "Guides Joya Grid",
@@ -966,7 +966,7 @@
         aboutEyebrow: "Promotion-Modell",
         aboutTitle: "Gebaut, um Style-Traffic zu Maison Looks zu senden",
         aboutText: "Diese Seite ist eine leichte Discovery-Schicht: kuratierte Kategorien, durchsuchbare Outfit-Karten, starke Bildvorschauen und Links zu Maison Looks Suchergebnissen.",
-        explore: "Maison Looks entdecken"
+        explore: "Street Style entdecken"
       },
       list: {
         eyebrow: "Joya Grid Guides",
@@ -1002,7 +1002,7 @@
         aboutEyebrow: "Modello promozionale",
         aboutTitle: "Creato per inviare traffico style a Maison Looks",
         aboutText: "Questo sito è uno strato leggero di scoperta: categorie curate, card outfit ricercabili, anteprime forti e link coerenti ai risultati Maison Looks.",
-        explore: "Esplora Maison Looks"
+        explore: "Esplora Street Style"
       },
       list: {
         eyebrow: "Guide Joya Grid",
@@ -1038,7 +1038,7 @@
         aboutEyebrow: "Promotiemodel",
         aboutTitle: "Gemaakt om style-verkeer naar Maison Looks te sturen",
         aboutText: "Deze site werkt als een lichte ontdekkingslaag: gecureerde categorieën, doorzoekbare outfitkaarten, sterke previews en consistente links naar Maison Looks-resultaten.",
-        explore: "Ontdek Maison Looks"
+        explore: "Ontdek Street Style"
       },
       list: {
         eyebrow: "Joya Grid gidsen",
@@ -1074,7 +1074,7 @@
         aboutEyebrow: "Modelo de promoção",
         aboutTitle: "Criado para enviar tráfego de estilo ao Maison Looks",
         aboutText: "Este site funciona como uma camada leve de descoberta: categorias curadas, cards de looks pesquisáveis, boas prévias visuais e links consistentes para resultados do Maison Looks.",
-        explore: "Explorar Maison Looks"
+        explore: "Explorar Street Style"
       },
       list: {
         eyebrow: "Guias Joya Grid",
@@ -1110,7 +1110,7 @@
         aboutEyebrow: "Promotionsmodel",
         aboutTitle: "Bygget til at sende stiltrafik til Maison Looks",
         aboutText: "Sitet fungerer som et let discovery-lag: kuraterede kategorier, søgbare outfitkort, stærke billedvisninger og links til Maison Looks-resultater.",
-        explore: "Udforsk Maison Looks"
+        explore: "Udforsk Street Style"
       },
       list: {
         eyebrow: "Joya Grid guides",
@@ -1146,7 +1146,7 @@
         aboutEyebrow: "Promotionsmodell",
         aboutTitle: "Byggt för att skicka stiltrafik till Maison Looks",
         aboutText: "Sajten fungerar som ett lätt discovery-lager: kurerade kategorier, sökbara outfitkort, tydliga bildförhandsvisningar och länkar till Maison Looks-resultat.",
-        explore: "Utforska Maison Looks"
+        explore: "Utforska Street Style"
       },
       list: {
         eyebrow: "Joya Grid guider",
@@ -1182,7 +1182,7 @@
         aboutEyebrow: "نموذج الترويج",
         aboutTitle: "مصمم لإرسال زيارات الموضة إلى Maison Looks",
         aboutText: "يعمل هذا الموقع كطبقة اكتشاف خفيفة: فئات منسقة، بطاقات أزياء قابلة للبحث، معاينات صور قوية وروابط منتظمة إلى نتائج Maison Looks.",
-        explore: "استكشف Maison Looks"
+        explore: "استكشف Street Style"
       },
       list: {
         eyebrow: "أدلة Joya Grid",
@@ -1218,7 +1218,7 @@
         aboutEyebrow: "Propagační model",
         aboutTitle: "Postaveno pro posílání stylového provozu na Maison Looks",
         aboutText: "Web funguje jako lehká discovery vrstva: kurátorované kategorie, vyhledatelné outfitové karty, silné náhledy a odkazy na výsledky Maison Looks.",
-        explore: "Prozkoumat Maison Looks"
+        explore: "Prozkoumat Street Style"
       },
       list: {
         eyebrow: "Průvodce Joya Grid",
