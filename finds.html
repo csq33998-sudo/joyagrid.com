@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JoyaGoo Spreadsheet Finds - Streetwear Board</title>
+    <meta
+      name="description"
+      content="Browse JoyaGoo spreadsheet finds for streetwear outfits, sneakers, bags, accessories, outerwear, and Maison Looks search inspiration."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="JoyaGoo Spreadsheet Finds - Streetwear Board" />
+    <meta property="og:description" content="Browse JoyaGoo spreadsheet finds for streetwear outfits, sneakers, bags, accessories, outerwear, and Maison Looks search inspiration." />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://joyagrid.com/finds" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:image" content="/assets/joyagoo-spreadsheet-og.png" />
+    <meta property="og:image:alt" content="JoyaGoo spreadsheet" />
+    <link rel="stylesheet" href="styles.css?v=2" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": "https://joyagrid.com/finds#collection",
+      "url": "https://joyagrid.com/finds",
+      "name": "JoyaGoo Spreadsheet Finds - Streetwear Board",
+      "description": "Browse JoyaGoo spreadsheet finds for streetwear outfits, sneakers, bags, accessories, outerwear, and Maison Looks search inspiration.",
+      "isPartOf": {
+        "@id": "https://joyagrid.com/#website"
+      },
+      "inLanguage": "en"
+    }
+    </script>
+  </head>
+  <body class="route-page">
+    <a class="skip-link" href="#finds">Skip to finds</a>
+
+    <header class="site-header" data-elevated="false">
+      <a class="brand" href="/" aria-label="JoyaGoo spreadsheet home">
+        <img class="brand-mark" src="/assets/joyagoo-icon-64.png" alt="JoyaGoo spreadsheet" width="42" height="42" />
+        <span>
+          <strong>Joya Grid</strong>
+          <small>Streetstyle finds</small>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/finds">Finds</a>
+        <a href="/categories">Categories</a>
+        <a href="/guides">Guides</a>
+        <a href="/about">About</a>
+      </nav>
+      <a class="header-cta" href="https://streetstyle.maisonlooks.com/" target="_blank" rel="noopener noreferrer">Visit Streetstyle</a>
+    </header>
+
+    <main>
+      <section class="article-hero">
+        <p class="eyebrow">Latest board</p>
+        <h1>Street-style finds</h1>
+        <p>Browse the JoyaGoo spreadsheet board as a focused streetwear discovery page, then continue to Maison Looks search results.</p>
+      </section>
+
+      <section class="toolbar" aria-label="Find search">
+        <div class="toolbar-inner">
+          <label class="search-box">
+            <input id="searchInput" type="search" placeholder="Try cargo, sneaker, denim..." autocomplete="off" />
+          </label>
+          <div class="submit-box">
+            <button id="searchButton" class="search-submit" type="button">Search</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="finds" class="section finds-section">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Curated finds</p>
+            <h2>JoyaGoo spreadsheet picks</h2>
+          </div>
+          <p id="resultCount" class="muted"></p>
+        </div>
+        <div id="productGrid" class="product-grid" aria-live="polite"></div>
+        <div id="emptyState" class="empty-state" hidden>
+          <h3>No matching finds</h3>
+          <p>Try another keyword or return to the full board.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Joya Grid is an independent inspiration and discovery site. Product imagery and prices are editorial examples.</p>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+  </body>
+</html>

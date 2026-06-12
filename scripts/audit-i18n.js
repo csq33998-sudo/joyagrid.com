@@ -36,7 +36,7 @@ function check(condition, message) {
 check(languages.join(",") === "en,de,fr,es,it,nl,pt", `Unexpected language order: ${languages.join(",")}`);
 check(!mojibakePattern.test(source), "js/i18n.js contains likely mojibake CJK characters");
 
-for (const file of ["index.html", "guides.html", ...articleFiles.map((file) => path.join("articles", file))]) {
+for (const file of ["index.html", "finds.html", "categories.html", "guides.html", "about.html", ...articleFiles.map((file) => path.join("articles", file))]) {
   const html = fs.readFileSync(file, "utf8");
   check(/js\/i18n\.js/.test(html), `${file} is missing i18n script`);
 }

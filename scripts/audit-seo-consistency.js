@@ -1,7 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const files = ["index.html", "guides.html", ...fs.readdirSync("articles").filter((file) => file.endsWith(".html")).map((file) => path.join("articles", file))];
+const routePages = ["finds.html", "categories.html", "guides.html", "about.html"];
+const files = ["index.html", ...routePages, ...fs.readdirSync("articles").filter((file) => file.endsWith(".html")).map((file) => path.join("articles", file))];
 const failures = [];
 const warnings = [];
 
@@ -67,6 +68,21 @@ for (const file of files) {
   if (file === "guides.html") {
     if (!/JoyaGoo Spreadsheet Guides/i.test(title)) failures.push("guides index title should target JoyaGoo Spreadsheet Guides");
     if (!/guides/i.test(h1)) warnings.push("guides index h1 should mention guides");
+  }
+
+  if (file === "finds.html") {
+    if (!/JoyaGoo Spreadsheet Finds/i.test(title)) failures.push("finds title should target JoyaGoo Spreadsheet Finds");
+    if (!/finds/i.test(h1)) warnings.push("finds h1 should mention finds");
+  }
+
+  if (file === "categories.html") {
+    if (!/JoyaGoo Spreadsheet Categories/i.test(title)) failures.push("categories title should target JoyaGoo Spreadsheet Categories");
+    if (!/categories/i.test(h1)) warnings.push("categories h1 should mention categories");
+  }
+
+  if (file === "about.html") {
+    if (!/About Joya Grid/i.test(title)) failures.push("about title should target About Joya Grid");
+    if (!/JoyaGoo spreadsheet/i.test(h1)) warnings.push("about h1 should mention JoyaGoo spreadsheet");
   }
 
   if (file.startsWith(`articles${path.sep}`)) {

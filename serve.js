@@ -22,7 +22,13 @@ function resolveFile(urlPath) {
     return { statusCode: 400, message: "Bad request" };
   }
 
-  if (clean === "guides") clean = "guides.html";
+  const cleanRoutes = new Map([
+    ["about", "about.html"],
+    ["categories", "categories.html"],
+    ["finds", "finds.html"],
+    ["guides", "guides.html"]
+  ]);
+  clean = cleanRoutes.get(clean) || clean;
 
   const file = path.resolve(root, clean);
   const relative = path.relative(root, file);

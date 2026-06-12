@@ -48,6 +48,7 @@
   }
 
   function renderCategories() {
+    if (!categoryTabs) return;
     categoryTabs.innerHTML = categories
       .map(
         (category) => `
@@ -69,6 +70,7 @@
   }
 
   function renderProducts() {
+    if (!productGrid || !resultCount || !emptyState) return;
     const visible = getVisibleProducts();
     resultCount.textContent = `${visible.length} ${visible.length === 1 ? "find" : "finds"}`;
     emptyState.hidden = visible.length > 0;
@@ -107,24 +109,28 @@
       .join("");
   }
 
-  categoryTabs.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-category]");
-    if (!button) return;
-    state.category = button.dataset.category;
-    renderCategories();
-    renderProducts();
-  });
+  if (categoryTabs) {
+    categoryTabs.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-category]");
+      if (!button) return;
+      state.category = button.dataset.category;
+      renderCategories();
+      renderProducts();
+    });
+  }
 
-  searchInput.addEventListener("keydown", (event) => {
-    if (event.key !== "Enter") return;
-    event.preventDefault();
-    openMaisonSearch();
-  });
+  if (searchInput) {
+    searchInput.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter") return;
+      event.preventDefault();
+      openMaisonSearch();
+    });
+  }
 
-  searchButton.addEventListener("click", openMaisonSearch);
+  if (searchButton) searchButton.addEventListener("click", openMaisonSearch);
 
   function openMaisonSearch() {
-    window.open(searchUrl(searchInput.value.trim()), "_blank", "noopener,noreferrer");
+    window.open(searchUrl(searchInput ? searchInput.value.trim() : ""), "_blank", "noopener,noreferrer");
   }
 
   window.addEventListener("scroll", () => {

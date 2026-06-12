@@ -2,7 +2,8 @@ const fs = require("fs");
 const path = require("path");
 
 const baseUrl = "https://joyagrid.com";
-const htmlFiles = ["index.html", "guides.html", ...fs.readdirSync("articles").filter((file) => file.endsWith(".html")).map((file) => path.join("articles", file))];
+const routePages = ["finds.html", "categories.html", "guides.html", "about.html"];
+const htmlFiles = ["index.html", ...routePages, ...fs.readdirSync("articles").filter((file) => file.endsWith(".html")).map((file) => path.join("articles", file))];
 const failures = [];
 const warnings = [];
 
@@ -34,7 +35,7 @@ if (fs.existsSync("robots.txt")) {
 if (fs.existsSync("sitemap.xml")) {
   const sitemap = fs.readFileSync("sitemap.xml", "utf8");
   for (const file of htmlFiles) {
-    const route = file === "guides.html" ? "guides" : file.replace(/\\/g, "/");
+    const route = routePages.includes(file) ? file.replace(/\.html$/, "") : file.replace(/\\/g, "/");
     const url = file === "index.html" ? `${baseUrl}/` : `${baseUrl}/${route}`;
     check(sitemap.includes(`<loc>${url}</loc>`), `sitemap.xml missing ${url}`);
   }
@@ -64,8 +65,10 @@ for (const file of htmlFiles) {
     check(/JoyaGoo Spreadsheet/i.test(title), "index title should lead with JoyaGoo Spreadsheet");
     check(/JoyaGoo Spreadsheet/i.test(h1), "index h1 should be JoyaGoo Spreadsheet");
     check(JSON.stringify(schemas).includes('"WebSite"'), "index should include WebSite schema");
-  } else if (file === "guides.html") {
-    check(JSON.stringify(schemas).includes('"CollectionPage"'), "guides index should include CollectionPage schema");
+  } else if (["finds.html", "categories.html", "guides.html"].includes(file)) {
+    check(JSON.stringify(schemas).includes('"CollectionPage"'), `${file} should include CollectionPage schema`);
+  } else if (file === "about.html") {
+    check(JSON.stringify(schemas).includes('"AboutPage"'), "about.html should include AboutPage schema");
   } else {
     check(JSON.stringify(schemas).includes('"Article"'), `${file} should include Article schema`);
     check(JSON.stringify(schemas).includes('"BreadcrumbList"'), `${file} should include BreadcrumbList schema`);

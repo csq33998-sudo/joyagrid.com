@@ -1,7 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const htmlFiles = ["index.html", "guides.html", ...fs.readdirSync("articles").filter((file) => file.endsWith(".html")).map((file) => path.join("articles", file))];
+const routePages = ["finds.html", "categories.html", "guides.html", "about.html"];
+const htmlFiles = ["index.html", ...routePages, ...fs.readdirSync("articles").filter((file) => file.endsWith(".html")).map((file) => path.join("articles", file))];
 const assetFiles = [
   "assets/joyagoo-spreadsheet-og.png",
   "assets/joyagoo-spreadsheet-logo.png",
