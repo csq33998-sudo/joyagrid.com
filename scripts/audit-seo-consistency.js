@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const routePages = ["finds.html", "categories.html", "guides.html", "about.html"];
+const routePages = ["finds.html", "categories.html", "guides.html", "blog.html", "about.html"];
 const files = ["index.html", ...routePages, ...fs.readdirSync("articles").filter((file) => file.endsWith(".html")).map((file) => path.join("articles", file))];
 const failures = [];
 const warnings = [];
@@ -83,6 +83,11 @@ for (const file of files) {
   if (file === "about.html") {
     if (!/About Joya Grid/i.test(title)) failures.push("about title should target About Joya Grid");
     if (!/JoyaGoo spreadsheet/i.test(h1)) warnings.push("about h1 should mention JoyaGoo spreadsheet");
+  }
+
+  if (file === "blog.html") {
+    if (!/JoyaGoo Spreadsheet Blog/i.test(title)) failures.push("blog title should target JoyaGoo Spreadsheet Blog");
+    if (!/JoyaGoo spreadsheet/i.test(h1)) warnings.push("blog h1 should mention JoyaGoo spreadsheet");
   }
 
   if (file.startsWith(`articles${path.sep}`)) {

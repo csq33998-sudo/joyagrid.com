@@ -24,6 +24,7 @@ function resolveFile(urlPath) {
 
   const cleanRoutes = new Map([
     ["about", "about.html"],
+    ["blog", "blog.html"],
     ["categories", "categories.html"],
     ["finds", "finds.html"],
     ["guides", "guides.html"]

@@ -1,13 +1,19 @@
 (function () {
   const LANG_KEY = "joya_grid_language";
   const supported = {
-    en: "English",
-    de: "Deutsch",
-    fr: "Français",
-    es: "Español",
-    it: "Italiano",
-    nl: "Nederlands",
-    pt: "Português"
+    en: "🇺🇸 English",
+    zh: "🇨🇳 中文",
+    pl: "🇵🇱 Polski",
+    de: "🇩🇪 Deutsch",
+    fr: "🇫🇷 Français",
+    it: "🇮🇹 Italiano",
+    pt: "🇵🇹 Português",
+    es: "🇪🇸 Español",
+    nl: "🇳🇱 Nederlands",
+    da: "🇩🇰 Dansk",
+    sv: "🇸🇪 Svenska",
+    ar: "🇸🇦 العربية",
+    cs: "🇨🇿 Čeština"
   };
 
   const categoryLabels = {
@@ -21,6 +27,28 @@
       Skirts: "Skirts",
       Sneakers: "Sneakers",
       "T-Shirts": "T-Shirts"
+    },
+    zh: {
+      All: "全部",
+      Accessories: "配饰",
+      Bags: "包袋",
+      Hoodies: "连帽衫",
+      Outerwear: "外套",
+      Pants: "裤装",
+      Skirts: "半裙",
+      Sneakers: "运动鞋",
+      "T-Shirts": "T恤"
+    },
+    pl: {
+      All: "Wszystko",
+      Accessories: "Akcesoria",
+      Bags: "Torby",
+      Hoodies: "Bluzy",
+      Outerwear: "Kurtki",
+      Pants: "Spodnie",
+      Skirts: "Spódnice",
+      Sneakers: "Sneakersy",
+      "T-Shirts": "T-shirty"
     },
     es: {
       All: "Todo",
@@ -87,6 +115,50 @@
       Skirts: "Saias",
       Sneakers: "Tênis",
       "T-Shirts": "Camisetas"
+    },
+    da: {
+      All: "Alle",
+      Accessories: "Accessories",
+      Bags: "Tasker",
+      Hoodies: "Hoodies",
+      Outerwear: "Jakker",
+      Pants: "Bukser",
+      Skirts: "Nederdele",
+      Sneakers: "Sneakers",
+      "T-Shirts": "T-shirts"
+    },
+    sv: {
+      All: "Alla",
+      Accessories: "Accessoarer",
+      Bags: "Väskor",
+      Hoodies: "Hoodies",
+      Outerwear: "Jackor",
+      Pants: "Byxor",
+      Skirts: "Kjolar",
+      Sneakers: "Sneakers",
+      "T-Shirts": "T-shirts"
+    },
+    ar: {
+      All: "الكل",
+      Accessories: "إكسسوارات",
+      Bags: "حقائب",
+      Hoodies: "هوديز",
+      Outerwear: "جاكيتات",
+      Pants: "بناطيل",
+      Skirts: "تنانير",
+      Sneakers: "سنيكرز",
+      "T-Shirts": "تيشيرتات"
+    },
+    cs: {
+      All: "Vše",
+      Accessories: "Doplňky",
+      Bags: "Tašky",
+      Hoodies: "Mikiny",
+      Outerwear: "Bundy",
+      Pants: "Kalhoty",
+      Skirts: "Sukně",
+      Sneakers: "Tenisky",
+      "T-Shirts": "Trička"
     }
   };
 
@@ -676,7 +748,9 @@
       article.title[lang] = entry[0];
       article.summary[lang] = entry[1];
     }
-    for (const lang of ["it", "nl", "pt"]) {
+    for (const lang of Object.keys(supported).filter((code) => code !== "en")) {
+      if (!article.title[lang]) article.title[lang] = article.title.en;
+      if (!article.summary[lang]) article.summary[lang] = article.summary.en;
       if (!article.meta[lang]) article.meta[lang] = article.meta.en.replace("min read", "min");
     }
   }
@@ -686,7 +760,7 @@
 
   const copy = {
     en: {
-      nav: ["Home", "Finds", "Categories", "Guides", "About"],
+      nav: ["Home", "Finds", "Categories", "Guides", "Blog", "About"],
       brandSub: "Streetstyle finds",
       visit: "Visit Streetstyle",
       footer: "Joya Grid is an independent inspiration and discovery site. Product imagery and prices are editorial examples.",
@@ -721,8 +795,80 @@
       },
       readGuide: "Read guide"
     },
+    zh: {
+      nav: ["首页", "Finds", "分类", "指南", "博客", "关于"],
+      brandSub: "街头风格发现",
+      visit: "访问 Streetstyle",
+      footer: "Joya Grid 是独立的灵感与发现站点。产品图片和价格仅作编辑示例。",
+      footerArticles: "Joya Grid 是独立的灵感与发现站点。我们不销售产品，也不处理订单。",
+      searchPlaceholder: "试试 cargo、sneaker、denim...",
+      searchButton: "搜索",
+      home: {
+        skip: "跳到 finds",
+        heroEyebrow: "精选街头风格发现",
+        heroTitle: "JoyaGoo Spreadsheet",
+        heroText: "浏览穿搭灵感、重点球鞋、日常包袋和季节性街头单品，然后前往 Maison Looks Streetstyle 查看完整灵感流。",
+        browse: "浏览 finds",
+        searchMaison: "搜索 Streetstyle",
+        categoriesEyebrow: "按风格浏览",
+        categoriesTitle: "快速进入商品档案",
+        findsEyebrow: "最新看板",
+        findsTitle: "街头风格 finds",
+        emptyTitle: "没有匹配的 finds",
+        emptyText: "换一个关键词，或回到全部分类。",
+        guidesEyebrow: "购买指南",
+        guidesTitle: "搜索前先阅读",
+        viewAll: "查看全部指南",
+        aboutEyebrow: "推广模式",
+        aboutTitle: "为 Maison Looks 输送风格流量",
+        aboutText: "本站是轻量级发现层：精选分类、可搜索穿搭卡片、清晰图片预览，以及稳定跳转到 Maison Looks 搜索结果。",
+        explore: "探索 Maison Looks"
+      },
+      list: {
+        eyebrow: "Joya Grid 指南",
+        title: "街头风格搜索文章",
+        intro: "为想摆脱原始表格滚动的人准备的原创购买笔记。"
+      },
+      readGuide: "阅读指南"
+    },
+    pl: {
+      nav: ["Home", "Finds", "Kategorie", "Poradniki", "Blog", "O nas"],
+      brandSub: "Streetstyle finds",
+      visit: "Odwiedź Streetstyle",
+      footer: "Joya Grid to niezależna strona inspiracji i odkrywania. Zdjęcia i ceny produktów są przykładami redakcyjnymi.",
+      footerArticles: "Joya Grid to niezależna strona inspiracji i odkrywania. Nie sprzedajemy produktów ani nie obsługujemy zamówień.",
+      searchPlaceholder: "Spróbuj cargo, sneaker, denim...",
+      searchButton: "Szukaj",
+      home: {
+        skip: "Przejdź do finds",
+        heroEyebrow: "Wybrane odkrycia streetwear",
+        heroTitle: "JoyaGoo Spreadsheet",
+        heroText: "Przeglądaj inspiracje outfitów, sneakersy, torby i sezonowe elementy street-style, a potem przejdź do Maison Looks Streetstyle.",
+        browse: "Przeglądaj finds",
+        searchMaison: "Szukaj Streetstyle",
+        categoriesEyebrow: "Kupuj według nastroju",
+        categoriesTitle: "Szybkie ścieżki do archiwum",
+        findsEyebrow: "Najnowsza tablica",
+        findsTitle: "Street-style finds",
+        emptyTitle: "Brak wyników",
+        emptyText: "Spróbuj innego słowa kluczowego albo wróć do wszystkich kategorii.",
+        guidesEyebrow: "Poradniki zakupowe",
+        guidesTitle: "Przeczytaj przed szukaniem",
+        viewAll: "Zobacz wszystkie poradniki",
+        aboutEyebrow: "Model promocji",
+        aboutTitle: "Zbudowane, aby kierować ruch do Maison Looks",
+        aboutText: "Ta strona działa jako lekka warstwa odkrywania: kategorie, wyszukiwalne karty outfitów, mocne podglądy i linki do wyników Maison Looks.",
+        explore: "Odkryj Maison Looks"
+      },
+      list: {
+        eyebrow: "Poradniki Joya Grid",
+        title: "Artykuły o wyszukiwaniu streetwear",
+        intro: "Oryginalne notatki zakupowe dla osób, które chcą czytelniejszej alternatywy dla surowych arkuszy."
+      },
+      readGuide: "Czytaj poradnik"
+    },
     es: {
-      nav: ["Inicio", "Finds", "Categorias", "Guias", "Acerca"],
+      nav: ["Inicio", "Finds", "Categorias", "Guias", "Blog", "Acerca"],
       brandSub: "Finds streetstyle",
       visit: "Visitar Streetstyle",
       footer: "Joya Grid es un sitio independiente de inspiracion y descubrimiento. Las imagenes y precios son ejemplos editoriales.",
@@ -758,7 +904,7 @@
       readGuide: "Leer guia"
     },
     fr: {
-      nav: ["Accueil", "Finds", "Categories", "Guides", "A propos"],
+      nav: ["Accueil", "Finds", "Categories", "Guides", "Blog", "A propos"],
       brandSub: "Finds streetstyle",
       visit: "Visiter Streetstyle",
       footer: "Joya Grid est un site independant d'inspiration et de decouverte. Les images et prix sont des exemples editoriaux.",
@@ -794,7 +940,7 @@
       readGuide: "Lire le guide"
     },
     de: {
-      nav: ["Home", "Finds", "Kategorien", "Guides", "Info"],
+      nav: ["Home", "Finds", "Kategorien", "Guides", "Blog", "Info"],
       brandSub: "Streetstyle finds",
       visit: "Streetstyle besuchen",
       footer: "Joya Grid ist eine unabhangige Inspirations- und Discovery-Seite. Bilder und Preise sind redaktionelle Beispiele.",
@@ -830,7 +976,7 @@
       readGuide: "Guide lesen"
     },
     it: {
-      nav: ["Home", "Finds", "Categorie", "Guide", "Info"],
+      nav: ["Home", "Finds", "Categorie", "Guide", "Blog", "Info"],
       brandSub: "Find streetstyle",
       visit: "Visita Streetstyle",
       footer: "Joya Grid è un sito indipendente di ispirazione e scoperta. Immagini e prezzi sono esempi editoriali.",
@@ -866,7 +1012,7 @@
       readGuide: "Leggi la guida"
     },
     nl: {
-      nav: ["Home", "Finds", "Categorieën", "Gidsen", "Over"],
+      nav: ["Home", "Finds", "Categorieën", "Gidsen", "Blog", "Over"],
       brandSub: "Streetstyle finds",
       visit: "Bezoek Streetstyle",
       footer: "Joya Grid is een onafhankelijke inspiratie- en ontdekkingssite. Afbeeldingen en prijzen zijn redactionele voorbeelden.",
@@ -902,7 +1048,7 @@
       readGuide: "Lees gids"
     },
     pt: {
-      nav: ["Início", "Finds", "Categorias", "Guias", "Sobre"],
+      nav: ["Início", "Finds", "Categorias", "Guias", "Blog", "Sobre"],
       brandSub: "Finds streetstyle",
       visit: "Visitar Streetstyle",
       footer: "Joya Grid é um site independente de inspiração e descoberta. Imagens e preços são exemplos editoriais.",
@@ -936,6 +1082,150 @@
         intro: "Notas originais para quem quer uma alternativa mais clara aos spreadsheets brutos."
       },
       readGuide: "Ler guia"
+    },
+    da: {
+      nav: ["Home", "Finds", "Kategorier", "Guides", "Blog", "Om"],
+      brandSub: "Streetstyle finds",
+      visit: "Besøg Streetstyle",
+      footer: "Joya Grid er et uafhængigt inspirations- og discovery-site. Produktbilleder og priser er redaktionelle eksempler.",
+      footerArticles: "Joya Grid er et uafhængigt inspirations- og discovery-site. Vi sælger ikke produkter og behandler ikke ordrer.",
+      searchPlaceholder: "Prøv cargo, sneaker, denim...",
+      searchButton: "Søg",
+      home: {
+        skip: "Spring til finds",
+        heroEyebrow: "Kurateret streetwear discovery",
+        heroTitle: "JoyaGoo Spreadsheet",
+        heroText: "Gennemse outfitideer, sneakers, tasker og sæsonprægede street-style items, og fortsæt til Maison Looks Streetstyle.",
+        browse: "Se finds",
+        searchMaison: "Søg Streetstyle",
+        categoriesEyebrow: "Shop efter mood",
+        categoriesTitle: "Hurtige veje ind i arkivet",
+        findsEyebrow: "Seneste board",
+        findsTitle: "Street-style finds",
+        emptyTitle: "Ingen matches",
+        emptyText: "Prøv et andet søgeord eller gå tilbage til alle kategorier.",
+        guidesEyebrow: "Købsguides",
+        guidesTitle: "Læs før du søger",
+        viewAll: "Se alle guides",
+        aboutEyebrow: "Promotionsmodel",
+        aboutTitle: "Bygget til at sende stiltrafik til Maison Looks",
+        aboutText: "Sitet fungerer som et let discovery-lag: kuraterede kategorier, søgbare outfitkort, stærke billedvisninger og links til Maison Looks-resultater.",
+        explore: "Udforsk Maison Looks"
+      },
+      list: {
+        eyebrow: "Joya Grid guides",
+        title: "Streetwear søgeartikler",
+        intro: "Originale købsnoter til folk, der vil have et renere alternativ til rå spreadsheets."
+      },
+      readGuide: "Læs guide"
+    },
+    sv: {
+      nav: ["Home", "Finds", "Kategorier", "Guider", "Blogg", "Om"],
+      brandSub: "Streetstyle finds",
+      visit: "Besök Streetstyle",
+      footer: "Joya Grid är en oberoende inspirations- och discovery-sajt. Produktbilder och priser är redaktionella exempel.",
+      footerArticles: "Joya Grid är en oberoende inspirations- och discovery-sajt. Vi säljer inte produkter och hanterar inte beställningar.",
+      searchPlaceholder: "Testa cargo, sneaker, denim...",
+      searchButton: "Sök",
+      home: {
+        skip: "Hoppa till finds",
+        heroEyebrow: "Kurerad streetwear discovery",
+        heroTitle: "JoyaGoo Spreadsheet",
+        heroText: "Bläddra bland outfitidéer, sneakers, vardagsväskor och säsongsbaserade street-style pieces, och fortsätt till Maison Looks Streetstyle.",
+        browse: "Bläddra finds",
+        searchMaison: "Sök Streetstyle",
+        categoriesEyebrow: "Shoppa efter mood",
+        categoriesTitle: "Snabba vägar in i arkivet",
+        findsEyebrow: "Senaste board",
+        findsTitle: "Street-style finds",
+        emptyTitle: "Inga matchningar",
+        emptyText: "Testa ett annat sökord eller gå tillbaka till alla kategorier.",
+        guidesEyebrow: "Köpguider",
+        guidesTitle: "Läs innan du söker",
+        viewAll: "Se alla guider",
+        aboutEyebrow: "Promotionsmodell",
+        aboutTitle: "Byggt för att skicka stiltrafik till Maison Looks",
+        aboutText: "Sajten fungerar som ett lätt discovery-lager: kurerade kategorier, sökbara outfitkort, tydliga bildförhandsvisningar och länkar till Maison Looks-resultat.",
+        explore: "Utforska Maison Looks"
+      },
+      list: {
+        eyebrow: "Joya Grid guider",
+        title: "Streetwear sökartiklar",
+        intro: "Originala köpnoteringar för dig som vill ha ett tydligare alternativ till råa spreadsheets."
+      },
+      readGuide: "Läs guide"
+    },
+    ar: {
+      nav: ["الرئيسية", "Finds", "الفئات", "الأدلة", "المدونة", "حول"],
+      brandSub: "اكتشافات ستريت ستايل",
+      visit: "زيارة Streetstyle",
+      footer: "Joya Grid موقع مستقل للإلهام والاكتشاف. صور المنتجات والأسعار أمثلة تحريرية فقط.",
+      footerArticles: "Joya Grid موقع مستقل للإلهام والاكتشاف. لا نبيع المنتجات ولا نعالج الطلبات.",
+      searchPlaceholder: "جرّب cargo أو sneaker أو denim...",
+      searchButton: "بحث",
+      home: {
+        skip: "تخطي إلى finds",
+        heroEyebrow: "اكتشاف ستريتوير منسق",
+        heroTitle: "JoyaGoo Spreadsheet",
+        heroText: "تصفح أفكار الإطلالات والسنيكرز والحقائب اليومية وقطع الستريت ستايل الموسمية، ثم تابع إلى Maison Looks Streetstyle.",
+        browse: "تصفح finds",
+        searchMaison: "ابحث في Streetstyle",
+        categoriesEyebrow: "تسوق حسب المزاج",
+        categoriesTitle: "مسارات سريعة داخل الأرشيف",
+        findsEyebrow: "أحدث اللوحات",
+        findsTitle: "Street-style finds",
+        emptyTitle: "لا توجد نتائج",
+        emptyText: "جرّب كلمة أخرى أو عد إلى كل الفئات.",
+        guidesEyebrow: "أدلة الشراء",
+        guidesTitle: "اقرأ قبل البحث",
+        viewAll: "عرض كل الأدلة",
+        aboutEyebrow: "نموذج الترويج",
+        aboutTitle: "مصمم لإرسال زيارات الموضة إلى Maison Looks",
+        aboutText: "يعمل هذا الموقع كطبقة اكتشاف خفيفة: فئات منسقة، بطاقات أزياء قابلة للبحث، معاينات صور قوية وروابط منتظمة إلى نتائج Maison Looks.",
+        explore: "استكشف Maison Looks"
+      },
+      list: {
+        eyebrow: "أدلة Joya Grid",
+        title: "مقالات بحث الستريتوير",
+        intro: "ملاحظات شراء أصلية لمن يريد بديلا أوضح من تصفح الجداول الخام."
+      },
+      readGuide: "قراءة الدليل"
+    },
+    cs: {
+      nav: ["Home", "Finds", "Kategorie", "Průvodce", "Blog", "O nás"],
+      brandSub: "Streetstyle finds",
+      visit: "Navštívit Streetstyle",
+      footer: "Joya Grid je nezávislý inspirační a discovery web. Obrázky a ceny produktů jsou redakční příklady.",
+      footerArticles: "Joya Grid je nezávislý inspirační a discovery web. Neprodáváme produkty ani nezpracováváme objednávky.",
+      searchPlaceholder: "Zkuste cargo, sneaker, denim...",
+      searchButton: "Hledat",
+      home: {
+        skip: "Přejít na finds",
+        heroEyebrow: "Kurátorovaný streetwear discovery",
+        heroTitle: "JoyaGoo Spreadsheet",
+        heroText: "Procházejte nápady na outfity, výrazné tenisky, každodenní tašky a sezónní street-style kousky, potom pokračujte na Maison Looks Streetstyle.",
+        browse: "Procházet finds",
+        searchMaison: "Hledat Streetstyle",
+        categoriesEyebrow: "Nakupovat podle nálady",
+        categoriesTitle: "Rychlé cesty do archivu",
+        findsEyebrow: "Nejnovější board",
+        findsTitle: "Street-style finds",
+        emptyTitle: "Žádné shody",
+        emptyText: "Zkuste jiné klíčové slovo nebo se vraťte ke všem kategoriím.",
+        guidesEyebrow: "Nákupní průvodce",
+        guidesTitle: "Čtěte před hledáním",
+        viewAll: "Zobrazit všechny průvodce",
+        aboutEyebrow: "Propagační model",
+        aboutTitle: "Postaveno pro posílání stylového provozu na Maison Looks",
+        aboutText: "Web funguje jako lehká discovery vrstva: kurátorované kategorie, vyhledatelné outfitové karty, silné náhledy a odkazy na výsledky Maison Looks.",
+        explore: "Prozkoumat Maison Looks"
+      },
+      list: {
+        eyebrow: "Průvodce Joya Grid",
+        title: "Články o hledání streetwearu",
+        intro: "Originální nákupní poznámky pro lidi, kteří chtějí čistší alternativu k surovým spreadsheetům."
+      },
+      readGuide: "Číst průvodce"
     }
   };
 
@@ -983,6 +1273,7 @@
   function applyGlobal(lang) {
     const t = copy[lang] || copy.en;
     document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
     document.querySelectorAll(".brand small").forEach((node) => {
       node.textContent = t.brandSub;
     });
@@ -1025,6 +1316,57 @@
     translateFinds(lang);
   }
 
+  function applyRoutePage(lang) {
+    const t = (copy[lang] || copy.en).home;
+    const path = location.pathname.replace(/\/+$/, "") || "/";
+
+    if (path === "/finds") {
+      setText(".article-hero .eyebrow", t.findsEyebrow);
+      setText(".article-hero h1", t.findsTitle);
+      setText(".article-hero p:not(.eyebrow)", t.heroText);
+      setText("#finds .eyebrow", t.findsEyebrow);
+      setText("#finds h2", t.findsTitle);
+      setText("#emptyState h3", t.emptyTitle);
+      setText("#emptyState p", t.emptyText);
+      translateFinds(lang);
+    }
+
+    if (path === "/categories") {
+      setText(".skip-link", t.skip);
+      setText(".article-hero .eyebrow", t.categoriesEyebrow);
+      setText(".article-hero h1", t.categoriesTitle);
+      setText(".article-hero p:not(.eyebrow)", t.heroText);
+      setText("#categories .eyebrow", t.categoriesEyebrow);
+      setText("#categories h2", t.categoriesTitle);
+      setText(".finds-section .eyebrow", t.findsEyebrow);
+      setText(".finds-section h2", t.findsTitle);
+      setText("#emptyState h3", t.emptyTitle);
+      setText("#emptyState p", t.emptyText);
+      translateFinds(lang);
+    }
+
+    if (path === "/about") {
+      setText(".skip-link", t.skip);
+      setText(".article-hero .eyebrow", t.aboutEyebrow);
+      setText(".article-hero h1", t.aboutTitle);
+      setText(".article-hero p:not(.eyebrow)", t.aboutText);
+      setText("#about .eyebrow", t.aboutEyebrow);
+      setText("#about h2", t.aboutTitle);
+      setText("#about p:not(.eyebrow)", t.aboutText);
+      setText("#about .button", t.explore);
+    }
+  }
+
+  function applyBlogPage(lang) {
+    const t = copy[lang] || copy.en;
+    setText(".article-hero .eyebrow", t.nav[4] === "Blog" ? "Joya Grid blog" : t.nav[4]);
+    setText(".article-hero h1", `${t.home.heroTitle} ${t.nav[4]}`);
+    setText(".article-hero p:not(.eyebrow)", t.list.intro);
+    document.querySelectorAll(".guide-list-item a").forEach((node) => {
+      node.textContent = t.readGuide;
+    });
+  }
+
   function translateFinds(lang) {
     if (isTranslatingFinds) return;
     isTranslatingFinds = true;
@@ -1045,12 +1387,18 @@
         if (link) {
           const searchWords = {
             en: "Search",
+            zh: "搜索",
+            pl: "Szukaj",
             es: "Buscar",
             fr: "Rechercher",
             de: "Suchen",
             it: "Cerca",
             nl: "Zoek",
-            pt: "Pesquisar"
+            pt: "Pesquisar",
+            da: "Søg",
+            sv: "Sök",
+            ar: "بحث",
+            cs: "Hledat"
           };
           const linkText = `${searchWords[lang] || searchWords.en} ${categoryText}`;
           if (link.textContent !== linkText) link.textContent = linkText;
@@ -1062,9 +1410,18 @@
         if (number) {
           const label = {
             en: Number(number[0]) === 1 ? "find" : "finds",
+            zh: "finds",
+            pl: Number(number[0]) === 1 ? "find" : "findy",
             es: Number(number[0]) === 1 ? "find" : "finds",
             fr: Number(number[0]) === 1 ? "find" : "finds",
-            de: Number(number[0]) === 1 ? "Find" : "Finds"
+            de: Number(number[0]) === 1 ? "Find" : "Finds",
+            it: Number(number[0]) === 1 ? "find" : "finds",
+            nl: Number(number[0]) === 1 ? "find" : "finds",
+            pt: Number(number[0]) === 1 ? "find" : "finds",
+            da: Number(number[0]) === 1 ? "find" : "finds",
+            sv: Number(number[0]) === 1 ? "find" : "finds",
+            ar: "finds",
+            cs: Number(number[0]) === 1 ? "find" : "findy"
           };
           const countText = `${number[0]} ${label[lang] || label.en}`;
           if (count.textContent !== countText) count.textContent = countText;
@@ -1142,7 +1499,7 @@
 
   function ensureFallbackTranslations() {
     for (const article of articles) {
-      for (const lang of ["es", "fr", "de", "it", "nl", "pt"]) {
+      for (const lang of Object.keys(supported).filter((code) => code !== "en")) {
         if (!article.body[lang]) {
           article.body[lang] = translateArticleFallback(article.body.en, lang);
         }
@@ -1215,13 +1572,24 @@
       nl: ["Wat je controleert", "Hoe je vergelijkt", "Wat je vermijdt", "Volgende stap"],
       pt: ["O que revisar", "Como comparar", "O que evitar", "Próximo passo"]
     };
+    const fallbackLabels = labels[lang] || {
+      eyebrow: "Guide",
+      ctaTitle: "Search on Maison Looks",
+      ctaText: "Use this search as a starting point and check details before choosing.",
+      ctaLabel: "Open search"
+    };
+    const fallbackHeadings = sectionHeadings[lang];
+    const fallbackText = sectionText[lang];
     return {
-      eyebrow: labels[lang].eyebrow,
-      lede: intro[lang],
-      sections: body.sections.map((_, index) => [sectionHeadings[lang][index] || sectionHeadings[lang][0], sectionText[lang]]),
-      ctaTitle: labels[lang].ctaTitle,
-      ctaText: labels[lang].ctaText,
-      ctaLabel: labels[lang].ctaLabel,
+      eyebrow: fallbackLabels.eyebrow,
+      lede: intro[lang] || body.lede,
+      sections: body.sections.map(([heading, text], index) => [
+        fallbackHeadings ? fallbackHeadings[index] || fallbackHeadings[0] : heading,
+        fallbackText || text
+      ]),
+      ctaTitle: fallbackLabels.ctaTitle,
+      ctaText: fallbackLabels.ctaText,
+      ctaLabel: fallbackLabels.ctaLabel,
       ctaQuery: body.ctaQuery
     };
   }
@@ -1229,6 +1597,8 @@
   function applyLanguage(lang) {
     applyGlobal(lang);
     if (document.body.classList.contains("home-page")) applyHome(lang);
+    if (document.body.classList.contains("route-page")) applyRoutePage(lang);
+    if (document.body.classList.contains("blog-index")) applyBlogPage(lang);
     if (document.body.classList.contains("articles-index")) applyArticleList(lang);
     if (document.querySelector(".article-body")) renderArticlePage(lang);
   }
@@ -1244,5 +1614,6 @@
         if (!isTranslatingFinds) translateFinds(getLang());
       }).observe(node, { childList: true, subtree: true });
     });
+    if (productGrid || categoryTabs) translateFinds(getLang());
   });
 })();

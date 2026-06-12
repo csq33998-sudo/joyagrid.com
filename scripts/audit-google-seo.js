@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const baseUrl = "https://joyagrid.com";
-const routePages = ["finds.html", "categories.html", "guides.html", "about.html"];
+const routePages = ["finds.html", "categories.html", "guides.html", "blog.html", "about.html"];
 const htmlFiles = ["index.html", ...routePages, ...fs.readdirSync("articles").filter((file) => file.endsWith(".html")).map((file) => path.join("articles", file))];
 const failures = [];
 const warnings = [];
@@ -67,6 +67,8 @@ for (const file of htmlFiles) {
     check(JSON.stringify(schemas).includes('"WebSite"'), "index should include WebSite schema");
   } else if (["finds.html", "categories.html", "guides.html"].includes(file)) {
     check(JSON.stringify(schemas).includes('"CollectionPage"'), `${file} should include CollectionPage schema`);
+  } else if (file === "blog.html") {
+    check(JSON.stringify(schemas).includes('"Blog"'), "blog.html should include Blog schema");
   } else if (file === "about.html") {
     check(JSON.stringify(schemas).includes('"AboutPage"'), "about.html should include AboutPage schema");
   } else {
