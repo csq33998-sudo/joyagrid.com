@@ -51,23 +51,25 @@ function request(pathname) {
 }
 
 async function verifyHttpOnly(note) {
-  const [home, css, js, products] = await Promise.all([
+  const [home, guides, css, js, products] = await Promise.all([
     request("/"),
+    request("/guides"),
     request("/styles.css"),
     request("/js/main.js"),
     request("/js/products.js")
   ]);
 
-  if (home.statusCode !== 200 || css.statusCode !== 200 || js.statusCode !== 200 || products.statusCode !== 200) {
+  if (home.statusCode !== 200 || guides.statusCode !== 200 || css.statusCode !== 200 || js.statusCode !== 200 || products.statusCode !== 200) {
     throw new Error(
-      `HTTP check failed: home=${home.statusCode} css=${css.statusCode} js=${js.statusCode} products=${products.statusCode}`
+      `HTTP check failed: home=${home.statusCode} guides=${guides.statusCode} css=${css.statusCode} js=${js.statusCode} products=${products.statusCode}`
     );
   }
   if (!home.body.includes("Joya Grid")) throw new Error("Home page is missing Joya Grid copy");
+  if (!guides.body.includes("Streetwear search guides")) throw new Error("Guides page is missing guide index copy");
   if (!home.body.includes("streetstyle.maisonlooks.com")) throw new Error("Home page is missing Streetstyle links");
   if (!products.body.includes("Washed Bomber Street Layer")) throw new Error("Seed products did not load");
 
-  console.log(`verified http home=200 css=200 js=200 products=200${note ? ` (${note})` : ""}`);
+  console.log(`verified http home=200 guides=200 css=200 js=200 products=200${note ? ` (${note})` : ""}`);
 }
 
 async function verifyServerHardening() {
@@ -96,6 +98,10 @@ async function verifyWithBrowser() {
   const cards = await page.locator(".product-card").count();
   const cta = await page.locator('a[href="https://streetstyle.maisonlooks.com/"]').first().getAttribute("href");
   const categoryLink = await page.locator('a[href*="streetstyle.maisonlooks.com/en/search?q=shoes"]').first().getAttribute("href");
+  const guidesLink = await page.locator('nav a[href="/guides"]').first().getAttribute("href");
+
+  await page.goto(`http://127.0.0.1:${port}/guides`, { waitUntil: "domcontentloaded" });
+  const guidesTitle = await page.locator("h1").textContent();
 
   const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true });
   await mobile.goto(`http://127.0.0.1:${port}/`, { waitUntil: "domcontentloaded" });
@@ -107,13 +113,15 @@ async function verifyWithBrowser() {
   await browser.close();
 
   if (title !== "Joya Grid") throw new Error(`Unexpected h1: ${title}`);
+  if (guidesTitle !== "Streetwear search guides") throw new Error(`Unexpected guides h1: ${guidesTitle}`);
   if (cards < 8) throw new Error(`Expected at least 8 product cards, found ${cards}`);
   if (!cta) throw new Error("Missing Streetstyle CTA");
   if (!categoryLink) throw new Error("Missing shoes search category link");
+  if (!guidesLink) throw new Error("Missing /guides navigation link");
   if (overflow) throw new Error("Mobile viewport has horizontal overflow");
   if (errors.length) throw new Error(`Console errors: ${errors.join("; ")}`);
 
-  console.log(`verified browser title="${title}" cards=${cards} mobileOverflow=${overflow}`);
+  console.log(`verified browser title="${title}" guides="${guidesTitle}" cards=${cards} mobileOverflow=${overflow}`);
 }
 
 (async () => {

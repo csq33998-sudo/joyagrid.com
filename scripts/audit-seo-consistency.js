@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const files = ["index.html", "articles.html", ...fs.readdirSync("articles").filter((file) => file.endsWith(".html")).map((file) => path.join("articles", file))];
+const files = ["index.html", "guides.html", ...fs.readdirSync("articles").filter((file) => file.endsWith(".html")).map((file) => path.join("articles", file))];
 const failures = [];
 const warnings = [];
 
@@ -64,9 +64,9 @@ for (const file of files) {
     if (ogType !== "website") failures.push("index OG type should be website");
   }
 
-  if (file === "articles.html") {
-    if (!/JoyaGoo Spreadsheet Guides/i.test(title)) failures.push("articles index title should target JoyaGoo Spreadsheet Guides");
-    if (!/guides/i.test(h1)) warnings.push("articles index h1 should mention guides/articles");
+  if (file === "guides.html") {
+    if (!/JoyaGoo Spreadsheet Guides/i.test(title)) failures.push("guides index title should target JoyaGoo Spreadsheet Guides");
+    if (!/guides/i.test(h1)) warnings.push("guides index h1 should mention guides");
   }
 
   if (file.startsWith(`articles${path.sep}`)) {

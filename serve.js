@@ -22,6 +22,8 @@ function resolveFile(urlPath) {
     return { statusCode: 400, message: "Bad request" };
   }
 
+  if (clean === "guides") clean = "guides.html";
+
   const file = path.resolve(root, clean);
   const relative = path.relative(root, file);
   if (relative.startsWith("..") || path.isAbsolute(relative) || relative.split(path.sep).some((part) => part.startsWith("."))) {
