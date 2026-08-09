@@ -51,13 +51,16 @@ function request(pathname) {
 }
 
 async function verifyHttpOnly(note) {
-  const [home, finds, categories, blog, about, guides, css, js, products] = await Promise.all([
+  const [home, finds, categories, blog, about, guides, spreadsheet, updates, buyingGuide, css, js, products] = await Promise.all([
     request("/"),
     request("/finds"),
     request("/categories"),
     request("/blog"),
     request("/about"),
     request("/guides"),
+    request("/joyagoo-spreadsheet"),
+    request("/joyagoo-spreadsheet-news"),
+    request("/joyagoo-buying-guide"),
     request("/styles.css"),
     request("/js/main.js"),
     request("/js/products.js")
@@ -70,24 +73,30 @@ async function verifyHttpOnly(note) {
     blog.statusCode !== 200 ||
     about.statusCode !== 200 ||
     guides.statusCode !== 200 ||
+    spreadsheet.statusCode !== 200 ||
+    updates.statusCode !== 200 ||
+    buyingGuide.statusCode !== 200 ||
     css.statusCode !== 200 ||
     js.statusCode !== 200 ||
     products.statusCode !== 200
   ) {
     throw new Error(
-      `HTTP check failed: home=${home.statusCode} finds=${finds.statusCode} categories=${categories.statusCode} blog=${blog.statusCode} about=${about.statusCode} guides=${guides.statusCode} css=${css.statusCode} js=${js.statusCode} products=${products.statusCode}`
+      `HTTP check failed: home=${home.statusCode} finds=${finds.statusCode} categories=${categories.statusCode} blog=${blog.statusCode} about=${about.statusCode} guides=${guides.statusCode} spreadsheet=${spreadsheet.statusCode} updates=${updates.statusCode} buyingGuide=${buyingGuide.statusCode} css=${css.statusCode} js=${js.statusCode} products=${products.statusCode}`
     );
   }
-  if (!home.body.includes("Joya Grid")) throw new Error("Home page is missing Joya Grid copy");
+  if (!home.body.includes("Joyagoo Spreadsheet 2026")) throw new Error("Home page is missing Joyagoo Spreadsheet 2026 copy");
   if (!finds.body.includes("Street-style finds")) throw new Error("Finds page is missing finds copy");
   if (!categories.body.includes("Streetwear categories")) throw new Error("Categories page is missing categories copy");
   if (!blog.body.includes("JoyaGoo spreadsheet notes")) throw new Error("Blog page is missing blog copy");
   if (!about.body.includes("JoyaGoo spreadsheet discovery")) throw new Error("About page is missing about copy");
   if (!guides.body.includes("Streetwear search guides")) throw new Error("Guides page is missing guide index copy");
+  if (!spreadsheet.body.includes("Joyagoo Spreadsheet 2026")) throw new Error("Spreadsheet page is missing main topic copy");
+  if (!updates.body.includes("Joyagoo Spreadsheet Updates")) throw new Error("Updates page is missing update copy");
+  if (!buyingGuide.body.includes("Joyagoo Buying Guide")) throw new Error("Buying guide page is missing guide copy");
   if (!home.body.includes("streetstyle.maisonlooks.com")) throw new Error("Home page is missing Streetstyle links");
   if (!products.body.includes("Washed Bomber Street Layer")) throw new Error("Seed products did not load");
 
-  console.log(`verified http home=200 finds=200 categories=200 blog=200 about=200 guides=200 css=200 js=200 products=200${note ? ` (${note})` : ""}`);
+  console.log(`verified http home=200 finds=200 categories=200 blog=200 about=200 guides=200 spreadsheet=200 updates=200 buyingGuide=200 css=200 js=200 products=200${note ? ` (${note})` : ""}`);
 }
 
 async function verifyServerHardening() {
@@ -116,11 +125,11 @@ async function verifyWithBrowser() {
   const cards = await page.locator(".product-card").count();
   const cta = await page.locator('a[href="https://streetstyle.maisonlooks.com/"]').first().getAttribute("href");
   const categoryLink = await page.locator('a[href*="streetstyle.maisonlooks.com/en/search?q=shoes"]').first().getAttribute("href");
-  const guidesLink = await page.locator('nav a[href="/guides"]').first().getAttribute("href");
-  const blogLink = await page.locator('nav a[href="/blog"]').first().getAttribute("href");
+  const spreadsheetLink = await page.locator('nav a[href="/joyagoo-spreadsheet"]').first().getAttribute("href");
+  const updatesLink = await page.locator('nav a[href="/joyagoo-spreadsheet-news"]').first().getAttribute("href");
+  const buyingGuideLink = await page.locator('nav a[href="/joyagoo-buying-guide"]').first().getAttribute("href");
   const findsLink = await page.locator('nav a[href="/finds"]').first().getAttribute("href");
   const categoriesLink = await page.locator('nav a[href="/categories"]').first().getAttribute("href");
-  const aboutLink = await page.locator('nav a[href="/about"]').first().getAttribute("href");
 
   await page.goto(`http://127.0.0.1:${port}/finds`, { waitUntil: "domcontentloaded" });
   const findsTitle = await page.locator("h1").textContent();
@@ -137,6 +146,15 @@ async function verifyWithBrowser() {
   await page.goto(`http://127.0.0.1:${port}/guides`, { waitUntil: "domcontentloaded" });
   const guidesTitle = await page.locator("h1").textContent();
 
+  await page.goto(`http://127.0.0.1:${port}/joyagoo-spreadsheet`, { waitUntil: "domcontentloaded" });
+  const spreadsheetTitle = await page.locator("h1").textContent();
+
+  await page.goto(`http://127.0.0.1:${port}/joyagoo-spreadsheet-news`, { waitUntil: "domcontentloaded" });
+  const updatesTitle = await page.locator("h1").textContent();
+
+  await page.goto(`http://127.0.0.1:${port}/joyagoo-buying-guide`, { waitUntil: "domcontentloaded" });
+  const buyingGuideTitle = await page.locator("h1").textContent();
+
   const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true });
   await mobile.goto(`http://127.0.0.1:${port}/`, { waitUntil: "domcontentloaded" });
   await mobile.waitForSelector(".product-card");
@@ -146,20 +164,23 @@ async function verifyWithBrowser() {
   await mobile.screenshot({ path: "verification-mobile.png", fullPage: true });
   await browser.close();
 
-  if (title !== "Joya Grid") throw new Error(`Unexpected h1: ${title}`);
+  if (title !== "Joyagoo Spreadsheet 2026") throw new Error(`Unexpected h1: ${title}`);
   if (findsTitle !== "Street-style finds") throw new Error(`Unexpected finds h1: ${findsTitle}`);
   if (categoriesTitle !== "Streetwear categories") throw new Error(`Unexpected categories h1: ${categoriesTitle}`);
   if (blogTitle !== "JoyaGoo spreadsheet notes") throw new Error(`Unexpected blog h1: ${blogTitle}`);
   if (aboutTitle !== "JoyaGoo spreadsheet discovery") throw new Error(`Unexpected about h1: ${aboutTitle}`);
   if (guidesTitle !== "Streetwear search guides") throw new Error(`Unexpected guides h1: ${guidesTitle}`);
+  if (spreadsheetTitle !== "Joyagoo Spreadsheet 2026") throw new Error(`Unexpected spreadsheet h1: ${spreadsheetTitle}`);
+  if (updatesTitle !== "Joyagoo Spreadsheet Updates") throw new Error(`Unexpected updates h1: ${updatesTitle}`);
+  if (buyingGuideTitle !== "Search, QC, sizing and shipping checks") throw new Error(`Unexpected buying guide h1: ${buyingGuideTitle}`);
   if (cards < 8) throw new Error(`Expected at least 8 product cards, found ${cards}`);
   if (!cta) throw new Error("Missing Streetstyle CTA");
   if (!categoryLink) throw new Error("Missing shoes search category link");
   if (!findsLink) throw new Error("Missing /finds navigation link");
   if (!categoriesLink) throw new Error("Missing /categories navigation link");
-  if (!blogLink) throw new Error("Missing /blog navigation link");
-  if (!aboutLink) throw new Error("Missing /about navigation link");
-  if (!guidesLink) throw new Error("Missing /guides navigation link");
+  if (!spreadsheetLink) throw new Error("Missing /joyagoo-spreadsheet navigation link");
+  if (!updatesLink) throw new Error("Missing /joyagoo-spreadsheet-news navigation link");
+  if (!buyingGuideLink) throw new Error("Missing /joyagoo-buying-guide navigation link");
   if (overflow) throw new Error("Mobile viewport has horizontal overflow");
   if (errors.length) throw new Error(`Console errors: ${errors.join("; ")}`);
 

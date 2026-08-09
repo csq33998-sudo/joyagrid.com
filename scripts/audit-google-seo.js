@@ -2,7 +2,16 @@ const fs = require("fs");
 const path = require("path");
 
 const baseUrl = "https://joyagrid.com";
-const routePages = ["finds.html", "categories.html", "guides.html", "blog.html", "about.html"];
+const routePages = [
+  "finds.html",
+  "categories.html",
+  "guides.html",
+  "blog.html",
+  "about.html",
+  "joyagoo-spreadsheet.html",
+  "joyagoo-spreadsheet-news.html",
+  "joyagoo-buying-guide.html"
+];
 const htmlFiles = ["index.html", ...routePages, ...fs.readdirSync("articles").filter((file) => file.endsWith(".html")).map((file) => path.join("articles", file))];
 const failures = [];
 const warnings = [];
@@ -65,7 +74,7 @@ for (const file of htmlFiles) {
     check(/JoyaGoo Spreadsheet/i.test(title), "index title should lead with JoyaGoo Spreadsheet");
     check(/JoyaGoo Spreadsheet/i.test(h1), "index h1 should be JoyaGoo Spreadsheet");
     check(JSON.stringify(schemas).includes('"WebSite"'), "index should include WebSite schema");
-  } else if (["finds.html", "categories.html", "guides.html"].includes(file)) {
+  } else if (["finds.html", "categories.html", "guides.html", "joyagoo-spreadsheet-news.html"].includes(file)) {
     check(JSON.stringify(schemas).includes('"CollectionPage"'), `${file} should include CollectionPage schema`);
   } else if (file === "blog.html") {
     check(JSON.stringify(schemas).includes('"Blog"'), "blog.html should include Blog schema");

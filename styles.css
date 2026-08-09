@@ -538,6 +538,90 @@ button:focus-visible {
   font-weight: 850;
 }
 
+.feature-grid,
+.route-grid,
+.faq-list {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feature-card,
+.route-card,
+.faq-list article,
+.timeline article {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 28px rgba(23, 20, 17, 0.05);
+}
+
+.feature-card,
+.route-card,
+.faq-list article {
+  padding: 24px;
+}
+
+.feature-card p,
+.route-card p,
+.faq-list p,
+.timeline p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.route-card {
+  display: grid;
+  gap: 12px;
+  min-height: 230px;
+}
+
+.route-card span {
+  color: var(--rose);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.route-card h3,
+.feature-card h3,
+.faq-list h3 {
+  margin-bottom: 0;
+}
+
+.timeline {
+  display: grid;
+  gap: 16px;
+}
+
+.timeline article {
+  padding: 22px;
+}
+
+.timeline time {
+  color: var(--rose);
+  display: block;
+  font-size: 12px;
+  font-weight: 850;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.inline-link-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 22px;
+}
+
+.inline-link-grid a {
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--accent-dark);
+  font-weight: 850;
+  padding: 16px;
+}
+
 .article-hero {
   background: var(--ink);
   color: white;
@@ -627,6 +711,12 @@ button:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .feature-grid,
+  .route-grid,
+  .faq-list {
+    grid-template-columns: 1fr;
+  }
+
   .about-band {
     grid-template-columns: 1fr;
   }
@@ -656,6 +746,10 @@ button:focus-visible {
 
   .toolbar-inner,
   .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inline-link-grid {
     grid-template-columns: 1fr;
   }
 

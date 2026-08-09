@@ -27,7 +27,10 @@ function resolveFile(urlPath) {
     ["blog", "blog.html"],
     ["categories", "categories.html"],
     ["finds", "finds.html"],
-    ["guides", "guides.html"]
+    ["guides", "guides.html"],
+    ["joyagoo-buying-guide", "joyagoo-buying-guide.html"],
+    ["joyagoo-spreadsheet", "joyagoo-spreadsheet.html"],
+    ["joyagoo-spreadsheet-news", "joyagoo-spreadsheet-news.html"]
   ]);
   clean = cleanRoutes.get(clean) || clean;
 
