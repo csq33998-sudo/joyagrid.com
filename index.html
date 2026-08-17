@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Joyagoo Spreadsheet 2026 - Finds, Categories and Guides</title>
+    <title>Joyagoo Spreadsheet 2026 - Finds, Categories, QC and Cost Tools</title>
     <meta
       name="description"
-      content="Use the Joyagoo Spreadsheet 2026 hub to browse curated finds, category routes, search tips, QC checks, updates, and buying guides for streetwear discovery."
+      content="Use the Joyagoo Spreadsheet 2026 hub to search curated finds, compare categories, check QC notes, estimate agent shopping costs, and follow safer buying guides."
     />
     <meta name="robots" content="index,follow" />
-    <meta property="og:title" content="Joyagoo Spreadsheet 2026 - Finds, Categories and Guides" />
+    <meta property="og:title" content="Joyagoo Spreadsheet 2026 - Finds, Categories, QC and Cost Tools" />
     <meta
       property="og:description"
-      content="Browse the Joyagoo Spreadsheet 2026 hub for curated finds, category routes, updated notes, QC checks, and practical buying guides."
+      content="Use the Joyagoo Spreadsheet 2026 hub to search curated finds, compare categories, check QC notes, estimate agent shopping costs, and follow safer buying guides."
     />
     <meta property="og:type" content="website" />
     <link rel="canonical" href="https://joyagrid.com/" />
@@ -38,13 +38,13 @@
           "@type": "WebSite",
           "@id": "https://joyagrid.com/#website",
           "url": "https://joyagrid.com/",
-          "name": "Joyagoo Spreadsheet 2026 - Joya Grid",
+            "name": "Joyagoo Spreadsheet 2026 - Joya Grid",
           "alternateName": [
             "Joyagoo Spreadsheet",
             "JoyaGoo Spreadsheet",
             "Joya Grid"
           ],
-          "description": "A curated Joyagoo spreadsheet hub for streetwear finds, category routes, QC checks, buying guides, and update notes.",
+          "description": "A curated Joyagoo spreadsheet hub for streetwear finds, category routes, QC checks, buying guides, cost tools, and update notes.",
           "publisher": {
             "@id": "https://joyagrid.com/#organization"
           },
@@ -72,6 +72,12 @@
               "position": 3,
               "name": "Joyagoo Buying Guide",
               "url": "https://joyagrid.com/joyagoo-buying-guide"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Agent Shopping Cost Calculator",
+              "url": "https://joyagrid.com/agent-shopping-cost-calculator"
             }
           ]
         },
@@ -127,8 +133,10 @@
         <a href="/joyagoo-buying-guide">Buying Guide</a>
         <a href="/finds">Finds</a>
         <a href="/categories">Categories</a>
-      </nav>
-      <a class="header-cta" href="https://streetstyle.maisonlooks.com/" target="_blank" rel="noopener noreferrer">Open Search</a>
+        <a href="/guides">Guides</a>
+        <a href="/blog">Blog</a>
+        <a href="/agent-shopping-cost-calculator">Calculator</a>
+      </nav><a class="header-cta" href="https://acbuy-spreadsheetbest.com/" target="_blank" rel="noopener noreferrer">Open ACBuy</a>
     </header>
 
     <main>
@@ -145,34 +153,70 @@
         </picture>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <p class="eyebrow">Updated August 9, 2026</p>
+          <p class="eyebrow">Updated August 17, 2026</p>
           <h1>Joyagoo Spreadsheet 2026</h1>
           <p>
-            A focused Joyagoo spreadsheet hub for curated streetwear finds, category routes, search keywords,
-            buying notes, QC checks, and update signals.
+            Search Joyagoo spreadsheet finds by category, preview QC checks, estimate total agent cost,
+            and use a cleaner three-step route before opening external search results.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="/joyagoo-spreadsheet">Read the spreadsheet guide</a>
+            <a class="button primary" href="#quick-search">Search the hub</a>
+            <a class="button ghost" href="/agent-shopping-cost-calculator">Estimate total cost</a>
             <a class="button ghost" href="/finds">Browse curated finds</a>
           </div>
         </div>
       </section>
 
-      <section class="toolbar" aria-label="Find filters">
+      <section id="quick-search" class="toolbar" aria-label="Find filters">
         <div class="toolbar-inner">
           <label class="search-box">
-            <input id="searchInput" type="search" placeholder="Search Joyagoo spreadsheet terms: sneaker, hoodie, cargo..." autocomplete="off" />
+            <span>Search Joyagoo spreadsheet terms</span>
+            <input id="searchInput" type="search" placeholder="Try Jordan 4, hoodie, cargo pants, tote bag..." autocomplete="off" />
           </label>
           <div class="submit-box">
+            <span>Open focused results</span>
             <button id="searchButton" class="search-submit" type="button">Search</button>
           </div>
         </div>
       </section>
 
+      <section id="finds" class="section finds-section">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Curated spreadsheet board</p>
+            <h2>Joyagoo spreadsheet finds</h2>
+          </div>
+          <p id="resultCount" class="muted"></p>
+        </div>
+        <div id="productGrid" class="product-grid" aria-live="polite"></div>
+        <div id="emptyState" class="empty-state" hidden>
+          <h3>No matching finds</h3>
+          <p>Try another keyword or switch back to all categories.</p>
+        </div>
+      </section>
+
+      <section class="section quick-routes" aria-label="Popular Joyagoo spreadsheet routes">
+        <a href="/categories">
+          <span>Browse here</span>
+          <strong>Categories</strong>
+          <small>Sneakers, hoodies, bags, pants, tees, accessories</small>
+        </a>
+        <a href="/joyagoo-buying-guide">
+          <span>Check first</span>
+          <strong>Buying workflow</strong>
+          <small>Measurements, QC photos, weight, shipping, seller notes</small>
+        </a>
+        <a href="/agent-shopping-cost-calculator">
+          <span>Calculate before buying</span>
+          <strong>Total cost tool</strong>
+          <small>Item price, service fee, shipping, exchange buffer</small>
+        </a>
+      </section>
+
       <section id="spreadsheet" class="section seo-intro">
         <div class="section-heading">
           <p class="eyebrow">Joyagoo spreadsheet overview</p>
-          <h2>What this hub helps you do</h2>
+          <h2>Browse here, verify there, buy only after the checks</h2>
         </div>
         <div class="feature-grid">
           <article class="feature-card">
@@ -186,6 +230,33 @@
           <article class="feature-card">
             <h3>Check before you buy</h3>
             <p>Review sizing notes, QC photos, product details, shipping weight, and total cost before moving from a find to a purchase decision.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section workflow-section">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Reference-style workflow</p>
+            <h2>Three steps from find to shortlist</h2>
+          </div>
+          <a class="text-link" href="/joyagoo-buying-guide">Full buying guide</a>
+        </div>
+        <div class="workflow-grid">
+          <article>
+            <span>1</span>
+            <h3>Search the board</h3>
+            <p>Use a product type, silhouette, color, material, or exact model term. Save several candidates instead of trusting the first result.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Check QC signals</h3>
+            <p>Compare shape, stitching, logo placement, texture, size chart, recent photos, and whether the item has enough visual proof.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Estimate landed cost</h3>
+            <p>Add service fees, domestic shipping, international shipping, exchange buffer, and coupons before deciding if the find is worth it.</p>
           </article>
         </div>
       </section>
@@ -214,6 +285,29 @@
             <h3>Joyagoo Buying Guide</h3>
             <p>A cautious workflow for search, sizing, QC photos, shipping estimates, and shortlist decisions.</p>
           </a>
+          <a class="route-card" href="/agent-shopping-cost-calculator">
+            <span>04</span>
+            <h3>Agent Shopping Cost Calculator</h3>
+            <p>A free calculator for estimating item price, fees, shipping, coupons, and the final landed cost before sharing a find.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="section keyword-section">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Long-tail SEO clusters</p>
+            <h2>Popular search angles to build next</h2>
+          </div>
+          <a class="text-link" href="/guides">Read guides</a>
+        </div>
+        <div class="keyword-grid">
+          <a href="/joyagoo-spreadsheet">joyagoo spreadsheet 2026</a>
+          <a href="/joyagoo-buying-guide">how to buy from weidian safely</a>
+          <a href="/articles/qc-photo-checklist.html">rep qc photo checklist</a>
+          <a href="/articles/shipping-cost-guide.html">agent shipping cost guide</a>
+          <a href="/categories">streetwear spreadsheet categories</a>
+          <a href="/agent-shopping-cost-calculator">agent shopping total cost calculator</a>
         </div>
       </section>
 
@@ -223,21 +317,6 @@
           <h2>Fast paths into the archive</h2>
         </div>
         <div id="categoryTabs" class="category-tabs" role="tablist" aria-label="Product categories"></div>
-      </section>
-
-      <section id="finds" class="section finds-section">
-        <div class="section-heading split">
-          <div>
-            <p class="eyebrow">Curated spreadsheet board</p>
-            <h2>Joyagoo spreadsheet finds</h2>
-          </div>
-          <p id="resultCount" class="muted"></p>
-        </div>
-        <div id="productGrid" class="product-grid" aria-live="polite"></div>
-        <div id="emptyState" class="empty-state" hidden>
-          <h3>No matching finds</h3>
-          <p>Try another keyword or switch back to all categories.</p>
-        </div>
       </section>
 
       <section class="section updates-list">
@@ -250,9 +329,9 @@
         </div>
         <div class="timeline">
           <article>
-            <time datetime="2026-08-09">August 9, 2026</time>
-            <h3>Homepage rebuilt around the Joyagoo Spreadsheet 2026 query</h3>
-            <p>Added clearer category routes, search-focused copy, FAQ coverage, and internal links to the main spreadsheet guide.</p>
+            <time datetime="2026-08-17">August 17, 2026</time>
+            <h3>Homepage rebuilt around search, categories, QC, and cost checks</h3>
+            <p>Added a reference-style search entry, shortcut routes, a three-step buying workflow, long-tail keyword links, and the cost calculator path.</p>
           </article>
           <article>
             <time datetime="2026-08-01">August 1, 2026</time>
@@ -338,5 +417,6 @@
 
     <script src="js/products.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
   </body>
 </html>

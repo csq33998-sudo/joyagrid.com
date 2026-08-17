@@ -1229,6 +1229,181 @@
     }
   };
 
+  const navLabels = {
+    en: {
+      "/": "Home",
+      "/joyagoo-spreadsheet": "Spreadsheet",
+      "/joyagoo-spreadsheet-news": "Updates",
+      "/joyagoo-buying-guide": "Buying Guide",
+      "/finds": "Finds",
+      "/categories": "Categories",
+      "/guides": "Guides",
+      "/blog": "Blog",
+      "/about": "About",
+      "/agent-shopping-cost-calculator": "Calculator"
+    },
+    zh: {
+      "/": "首页",
+      "/joyagoo-spreadsheet": "表格",
+      "/joyagoo-spreadsheet-news": "更新",
+      "/joyagoo-buying-guide": "购买指南",
+      "/finds": "Finds",
+      "/categories": "分类",
+      "/guides": "指南",
+      "/blog": "博客",
+      "/about": "关于",
+      "/agent-shopping-cost-calculator": "计算器"
+    },
+    pl: {
+      "/": "Home",
+      "/joyagoo-spreadsheet": "Arkusz",
+      "/joyagoo-spreadsheet-news": "Aktualizacje",
+      "/joyagoo-buying-guide": "Poradnik",
+      "/finds": "Finds",
+      "/categories": "Kategorie",
+      "/guides": "Poradniki",
+      "/blog": "Blog",
+      "/about": "O nas",
+      "/agent-shopping-cost-calculator": "Kalkulator"
+    },
+    de: {
+      "/": "Home",
+      "/joyagoo-spreadsheet": "Spreadsheet",
+      "/joyagoo-spreadsheet-news": "Updates",
+      "/joyagoo-buying-guide": "Kaufguide",
+      "/finds": "Finds",
+      "/categories": "Kategorien",
+      "/guides": "Guides",
+      "/blog": "Blog",
+      "/about": "Info",
+      "/agent-shopping-cost-calculator": "Rechner"
+    },
+    fr: {
+      "/": "Accueil",
+      "/joyagoo-spreadsheet": "Spreadsheet",
+      "/joyagoo-spreadsheet-news": "Actus",
+      "/joyagoo-buying-guide": "Guide achat",
+      "/finds": "Finds",
+      "/categories": "Categories",
+      "/guides": "Guides",
+      "/blog": "Blog",
+      "/about": "A propos",
+      "/agent-shopping-cost-calculator": "Calculateur"
+    },
+    it: {
+      "/": "Home",
+      "/joyagoo-spreadsheet": "Spreadsheet",
+      "/joyagoo-spreadsheet-news": "Aggiornamenti",
+      "/joyagoo-buying-guide": "Guida acquisto",
+      "/finds": "Finds",
+      "/categories": "Categorie",
+      "/guides": "Guide",
+      "/blog": "Blog",
+      "/about": "Info",
+      "/agent-shopping-cost-calculator": "Calcolatore"
+    },
+    pt: {
+      "/": "Início",
+      "/joyagoo-spreadsheet": "Spreadsheet",
+      "/joyagoo-spreadsheet-news": "Atualizações",
+      "/joyagoo-buying-guide": "Guia de compra",
+      "/finds": "Finds",
+      "/categories": "Categorias",
+      "/guides": "Guias",
+      "/blog": "Blog",
+      "/about": "Sobre",
+      "/agent-shopping-cost-calculator": "Calculadora"
+    },
+    es: {
+      "/": "Inicio",
+      "/joyagoo-spreadsheet": "Spreadsheet",
+      "/joyagoo-spreadsheet-news": "Actualizaciones",
+      "/joyagoo-buying-guide": "Guia de compra",
+      "/finds": "Finds",
+      "/categories": "Categorias",
+      "/guides": "Guias",
+      "/blog": "Blog",
+      "/about": "Acerca",
+      "/agent-shopping-cost-calculator": "Calculadora"
+    },
+    nl: {
+      "/": "Home",
+      "/joyagoo-spreadsheet": "Spreadsheet",
+      "/joyagoo-spreadsheet-news": "Updates",
+      "/joyagoo-buying-guide": "Koopgids",
+      "/finds": "Finds",
+      "/categories": "Categorieën",
+      "/guides": "Gidsen",
+      "/blog": "Blog",
+      "/about": "Over",
+      "/agent-shopping-cost-calculator": "Calculator"
+    },
+    da: {
+      "/": "Home",
+      "/joyagoo-spreadsheet": "Spreadsheet",
+      "/joyagoo-spreadsheet-news": "Opdateringer",
+      "/joyagoo-buying-guide": "Købsguide",
+      "/finds": "Finds",
+      "/categories": "Kategorier",
+      "/guides": "Guides",
+      "/blog": "Blog",
+      "/about": "Om",
+      "/agent-shopping-cost-calculator": "Beregner"
+    },
+    sv: {
+      "/": "Home",
+      "/joyagoo-spreadsheet": "Spreadsheet",
+      "/joyagoo-spreadsheet-news": "Uppdateringar",
+      "/joyagoo-buying-guide": "Köpguide",
+      "/finds": "Finds",
+      "/categories": "Kategorier",
+      "/guides": "Guider",
+      "/blog": "Blogg",
+      "/about": "Om",
+      "/agent-shopping-cost-calculator": "Kalkylator"
+    },
+    ar: {
+      "/": "الرئيسية",
+      "/joyagoo-spreadsheet": "الجدول",
+      "/joyagoo-spreadsheet-news": "التحديثات",
+      "/joyagoo-buying-guide": "دليل الشراء",
+      "/finds": "Finds",
+      "/categories": "الفئات",
+      "/guides": "الأدلة",
+      "/blog": "المدونة",
+      "/about": "حول",
+      "/agent-shopping-cost-calculator": "الحاسبة"
+    },
+    cs: {
+      "/": "Home",
+      "/joyagoo-spreadsheet": "Spreadsheet",
+      "/joyagoo-spreadsheet-news": "Aktualizace",
+      "/joyagoo-buying-guide": "Nákupní průvodce",
+      "/finds": "Finds",
+      "/categories": "Kategorie",
+      "/guides": "Průvodce",
+      "/blog": "Blog",
+      "/about": "O nás",
+      "/agent-shopping-cost-calculator": "Kalkulačka"
+    }
+  };
+
+  const ctaLabels = {
+    en: { visit: "Open ACBuy", search: "Search Finds", browse: "Browse Finds" },
+    zh: { visit: "打开 ACBuy", search: "搜索 Finds", browse: "浏览 Finds" },
+    pl: { visit: "Otwórz ACBuy", search: "Szukaj finds", browse: "Przeglądaj finds" },
+    de: { visit: "ACBuy öffnen", search: "Finds suchen", browse: "Finds ansehen" },
+    fr: { visit: "Ouvrir ACBuy", search: "Rechercher finds", browse: "Parcourir finds" },
+    it: { visit: "Apri ACBuy", search: "Cerca finds", browse: "Sfoglia finds" },
+    pt: { visit: "Abrir ACBuy", search: "Pesquisar finds", browse: "Ver finds" },
+    es: { visit: "Abrir ACBuy", search: "Buscar finds", browse: "Ver finds" },
+    nl: { visit: "Open ACBuy", search: "Zoek finds", browse: "Bekijk finds" },
+    da: { visit: "Åbn ACBuy", search: "Søg finds", browse: "Se finds" },
+    sv: { visit: "Öppna ACBuy", search: "Sök finds", browse: "Bläddra finds" },
+    ar: { visit: "فتح ACBuy", search: "بحث Finds", browse: "تصفح Finds" },
+    cs: { visit: "Otevřít ACBuy", search: "Hledat finds", browse: "Procházet finds" }
+  };
+
   function getLang() {
     const stored = localStorage.getItem(LANG_KEY);
     return supported[stored] ? stored : "en";
@@ -1270,21 +1445,43 @@
     if (header && cta) header.insertBefore(select, cta);
   }
 
+  function normalizedPath(href) {
+    let url;
+    try {
+      url = new URL(href, location.origin);
+    } catch {
+      return href;
+    }
+    if (url.origin !== location.origin) return url.href;
+    return url.pathname.replace(/\/+$/, "") || "/";
+  }
+
+  function getCtaLabel(node, lang) {
+    const labels = ctaLabels[lang] || ctaLabels.en;
+    const href = node.getAttribute("href") || "";
+    if (href === "#quick-search") return labels.search;
+    if (normalizedPath(href) === "/finds") return labels.browse;
+    return labels.visit;
+  }
+
   function applyGlobal(lang) {
     const t = copy[lang] || copy.en;
+    const labels = navLabels[lang] || navLabels.en;
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
     document.querySelectorAll(".brand small").forEach((node) => {
       node.textContent = t.brandSub;
     });
-    document.querySelectorAll("nav a").forEach((node, index) => {
-      if (t.nav[index]) node.textContent = t.nav[index];
+    document.querySelectorAll("nav a").forEach((node) => {
+      const label = labels[normalizedPath(node.getAttribute("href") || "")];
+      if (label) node.textContent = label;
     });
     document.querySelectorAll(".header-cta").forEach((node) => {
-      node.textContent = t.visit;
+      node.textContent = getCtaLabel(node, lang);
     });
     document.querySelectorAll(".site-footer p").forEach((node) => {
-      node.textContent = document.body.classList.contains("articles-index") ? t.footerArticles : t.footer;
+      const isArticleLike = document.body.classList.contains("articles-index") || document.body.classList.contains("article-page");
+      node.textContent = isArticleLike ? t.footerArticles : t.footer;
     });
     const input = document.querySelector("#searchInput");
     if (input) input.placeholder = t.searchPlaceholder;
@@ -1298,7 +1495,9 @@
     setText(".hero h1", t.heroTitle);
     setText(".hero p:not(.eyebrow)", t.heroText);
     setText(".hero-actions .button.primary", t.browse);
-    setText(".hero-actions .button.ghost", t.searchMaison);
+    document.querySelectorAll(".hero-actions .button.ghost").forEach((node, index) => {
+      node.textContent = index === 0 ? t.searchMaison : t.browse;
+    });
     setText("#categories .eyebrow", t.categoriesEyebrow);
     setText("#categories h2", t.categoriesTitle);
     setText("#finds .eyebrow", t.findsEyebrow);
@@ -1359,8 +1558,9 @@
 
   function applyBlogPage(lang) {
     const t = copy[lang] || copy.en;
-    setText(".article-hero .eyebrow", t.nav[4] === "Blog" ? "Joya Grid blog" : t.nav[4]);
-    setText(".article-hero h1", `${t.home.heroTitle} ${t.nav[4]}`);
+    const blogLabel = (navLabels[lang] || navLabels.en)["/blog"];
+    setText(".article-hero .eyebrow", blogLabel === "Blog" ? "Joya Grid blog" : blogLabel);
+    setText(".article-hero h1", `${t.home.heroTitle} ${blogLabel}`);
     setText(".article-hero p:not(.eyebrow)", t.list.intro);
     document.querySelectorAll(".guide-list-item a").forEach((node) => {
       node.textContent = t.readGuide;
