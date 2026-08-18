@@ -35,6 +35,10 @@
     return searchUrl(categoryQueries[category] || category);
   }
 
+  function productUrl(product) {
+    return searchUrl(product.name);
+  }
+
   function escapeHtml(value) {
     return String(value).replace(/[&<>"']/g, (character) => {
       return {
@@ -51,11 +55,14 @@
     if (!categoryTabs) return;
     categoryTabs.innerHTML = categories
       .map(
-        (category) => `
-          <button class="category-tab" type="button" role="tab" aria-selected="${category === state.category}" data-category="${escapeHtml(category)}">
+        (category) => {
+          const href = category === "All" ? "https://streetstyle.maisonlooks.com/" : categoryUrl(category);
+          return `
+          <a class="category-tab" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer" data-category="${escapeHtml(category)}">
             ${escapeHtml(category)}
-          </button>
-        `
+          </a>
+        `;
+        }
       )
       .join("");
   }
@@ -79,6 +86,7 @@
       .map((product) => {
         const category = escapeHtml(product.category);
         const categoryHref = escapeHtml(categoryUrl(product.category));
+        const productHref = escapeHtml(productUrl(product));
         const image = escapeHtml(product.image);
         const mood = escapeHtml(product.mood);
         const name = escapeHtml(product.name);
@@ -86,13 +94,13 @@
 
         return `
           <article class="product-card">
-            <a class="product-media" href="${categoryHref}" target="_blank" rel="noopener noreferrer" aria-label="Search ${category} on Maison Looks">
+            <a class="product-media" href="${productHref}" target="_blank" rel="noopener noreferrer" aria-label="Search ${name} on Maison Looks">
               <img src="${image}" alt="${name}" loading="lazy" width="720" height="900" />
               <span class="badge">${mood}</span>
             </a>
             <div class="product-body">
               <div>
-                <h3>${name}</h3>
+                <h3><a href="${productHref}" target="_blank" rel="noopener noreferrer">${name}</a></h3>
                 <div class="product-meta">
                   <span class="muted">${category}</span>
                   <span class="price">$${price}</span>
@@ -101,22 +109,12 @@
               <div class="tags">
                 ${product.tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
               </div>
-              <a class="card-link" href="${categoryHref}" target="_blank" rel="noopener noreferrer">Search ${category}</a>
+              <a class="card-link" href="${productHref}" target="_blank" rel="noopener noreferrer" data-link-kind="product">Search this find</a>
             </div>
           </article>
         `;
       })
       .join("");
-  }
-
-  if (categoryTabs) {
-    categoryTabs.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-category]");
-      if (!button) return;
-      state.category = button.dataset.category;
-      renderCategories();
-      renderProducts();
-    });
   }
 
   if (searchInput) {

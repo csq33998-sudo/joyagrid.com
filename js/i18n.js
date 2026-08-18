@@ -422,10 +422,10 @@
             ["QC the side profile", "The side view reveals toe height, heel curve, sole thickness, panel alignment, and proportions."],
             ["Check sole and insole details", "Look at outsole texture, midsole paint, glue marks, and insole length."]
           ],
-          ctaTitle: "Open a shoe search",
-          ctaText: "Start with a useful broad term and refine from there.",
-          ctaLabel: "Search retro running shoe",
-          ctaQuery: "retro running shoe"
+          ctaTitle: "Return to the shoe hub",
+          ctaText: "Use the main hub to compare Joyagoo spreadsheet shoes with QC context before opening buy links.",
+          ctaLabel: "joyagoo spreadsheet",
+          ctaHref: "/joyagoo-spreadsheet"
         }
       }
     },
@@ -682,6 +682,95 @@
           ctaText: "Start with one category and narrow from there.",
           ctaLabel: "Search hoodie",
           ctaQuery: "hoodie"
+        }
+      }
+    }
+    ,
+    {
+      slug: "joyagoo-spreadsheet-reddit",
+      meta: { en: "Reddit - 5 min read" },
+      title: { en: "How Reddit discussions shape Joyagoo spreadsheet finds" },
+      summary: { en: "Use Reddit-style discussion as research context for QC photos, sizing comments, seller notes, and safer shortlist habits." },
+      body: {
+        en: {
+          eyebrow: "Reddit research",
+          lede: "Reddit-style community discussion is useful because people compare finds in public: QC photos, sizing comments, seller notes, and dead-link warnings. Use those signals to support your research, then return to the main joyagoo spreadsheet before building a shortlist.",
+          sections: [
+            ["Look for repeated evidence", "One comment is only a clue. Several users discussing the same shape, sizing issue, seller behavior, or QC concern is stronger evidence. Save patterns, not hype."],
+            ["Separate reviews from promotion", "Community posts can be helpful, but they can also be incomplete. Treat every claim as something to verify through photos, measurements, destination pages, and current agent rules."],
+            ["Turn Reddit notes into spreadsheet checks", "If a post mentions bad stitching, odd color, or sizing drift, add that issue to your QC checklist. The spreadsheet becomes better when social discussion turns into repeatable checks."],
+            ["Route back to the hub", "After researching comments, use the main hub to compare categories, read FAQs, and open only the finds that still make sense."]
+          ],
+          ctaTitle: "Return to the hub",
+          ctaText: "Use community research as context, then validate finds on the main page.",
+          ctaLabel: "joyagoo spreadsheet",
+          ctaHref: "/joyagoo-spreadsheet"
+        }
+      }
+    },
+    {
+      slug: "best-items-on-joyagoo-spreadsheet",
+      meta: { en: "Top finds - 6 min read" },
+      title: { en: "Best items on Joyagoo spreadsheet by category and QC value" },
+      summary: { en: "Find the best items on Joyagoo spreadsheet by category, QC quality, price range, photo evidence, and shortlist value." },
+      body: {
+        en: {
+          eyebrow: "Top finds",
+          lede: "The best items are not always the cheapest or most viral. Strong finds have clear photos, realistic prices, useful category tags, and enough QC evidence to compare before buying. Start with this framework, then browse the main joyagoo spreadsheet.",
+          sections: [
+            ["Best sneaker items", "Prioritize shoes with side-profile photos, outsole detail, insole measurements, and consistent color. A pair that looks clean in several angles is stronger than a pair with only one hero image."],
+            ["Best streetwear items", "Look for hoodies, tees, pants, and outerwear with clear measurements. Fabric weight, print placement, wash effect, and shoulder shape matter more than copied seller titles."],
+            ["Best bags and accessories", "Strong accessory finds show hardware, zippers, straps, texture, and scale. For everyday carry, utility and comfort are as important as the first image."],
+            ["How to rank your shortlist", "Score each find by photo quality, sizing confidence, price, shipping risk, and how well it fits your existing wardrobe. Remove anything that needs too many assumptions."]
+          ],
+          ctaTitle: "Browse the top-find hub",
+          ctaText: "Use the product cards and FAQ to compare popular finds before opening buy links.",
+          ctaLabel: "joyagoo spreadsheet",
+          ctaHref: "/joyagoo-spreadsheet"
+        }
+      }
+    },
+    {
+      slug: "joyagoo-spreadsheet-vs-pandabuy",
+      meta: { en: "Comparison - 6 min read" },
+      title: { en: "Joyagoo spreadsheet vs Pandabuy spreadsheet research comparison" },
+      summary: { en: "Compare Joyagoo spreadsheet vs Pandabuy research habits, QC checks, category coverage, risk, and buying workflow." },
+      body: {
+        en: {
+          eyebrow: "Comparison",
+          lede: "Comparison searches usually come from users who already know spreadsheet-style agent research but want a clearer workflow. The safest answer is to compare research quality, not hype. Use this page as a decision guide, then return to the main joyagoo spreadsheet.",
+          sections: [
+            ["Compare category coverage", "Look at whether each spreadsheet has the categories you actually need: shoes, hoodies, pants, bags, accessories, tech, or full outfit ideas. A larger catalog is not automatically better if your category is poorly organized."],
+            ["Compare QC visibility", "QC context matters more than the platform name. Prefer entries that make photos, measurements, and seller-page checks easy to review before you commit."],
+            ["Compare update habits", "Spreadsheet value drops when links expire or prices drift. Pages with visible update notes, category reviews, and freshness signals are easier to trust as research surfaces."],
+            ["Compare buying risk", "Agent availability, payment rules, shipping rules, and support can change. Verify current terms at the destination before using any spreadsheet row as an order path."]
+          ],
+          ctaTitle: "Use the visual hub first",
+          ctaText: "Start with structured categories and QC reminders, then compare alternatives only after you know what you need.",
+          ctaLabel: "joyagoo spreadsheet",
+          ctaHref: "/joyagoo-spreadsheet"
+        }
+      }
+    },
+    {
+      slug: "how-to-use-joyagoo-spreadsheet",
+      meta: { en: "Tutorial - 6 min read" },
+      title: { en: "How to use Joyagoo spreadsheet without beginner mistakes" },
+      summary: { en: "Learn how to use Joyagoo spreadsheet with categories, product cards, QC photos, USD prices, and safer shortlist steps." },
+      body: {
+        en: {
+          eyebrow: "Tutorial",
+          lede: "A good workflow starts with intent, not impulse. Choose a category, scan visual evidence, check QC context, estimate total cost, and save only strong candidates. The full joyagoo spreadsheet hub keeps those steps together.",
+          sections: [
+            ["Step 1: choose a category", "Start with sneakers, streetwear, bags, accessories, or tech. Category-first browsing keeps the page readable and helps you compare similar items."],
+            ["Step 2: inspect the product card", "Use image, name, price, tags, and QC route as the first filter. Do not open every link; open only items that match your need."],
+            ["Step 3: review QC photos", "Look for angles that prove shape, material, stitching, hardware, color, measurements, and packaging. Ask for more photos when a detail is missing."],
+            ["Step 4: estimate the real cost", "Item price is only part of the decision. Add domestic shipping, service fees, international shipping, exchange buffer, and likely weight."]
+          ],
+          ctaTitle: "Open the tutorial hub",
+          ctaText: "Use the full guide, FAQ, and visual cards to build a stronger shortlist.",
+          ctaLabel: "joyagoo spreadsheet",
+          ctaHref: "/joyagoo-spreadsheet"
         }
       }
     }
@@ -1389,19 +1478,19 @@
   };
 
   const ctaLabels = {
-    en: { visit: "Open ACBuy", search: "Search Finds", browse: "Browse Finds" },
-    zh: { visit: "打开 ACBuy", search: "搜索 Finds", browse: "浏览 Finds" },
-    pl: { visit: "Otwórz ACBuy", search: "Szukaj finds", browse: "Przeglądaj finds" },
-    de: { visit: "ACBuy öffnen", search: "Finds suchen", browse: "Finds ansehen" },
-    fr: { visit: "Ouvrir ACBuy", search: "Rechercher finds", browse: "Parcourir finds" },
-    it: { visit: "Apri ACBuy", search: "Cerca finds", browse: "Sfoglia finds" },
-    pt: { visit: "Abrir ACBuy", search: "Pesquisar finds", browse: "Ver finds" },
-    es: { visit: "Abrir ACBuy", search: "Buscar finds", browse: "Ver finds" },
-    nl: { visit: "Open ACBuy", search: "Zoek finds", browse: "Bekijk finds" },
-    da: { visit: "Åbn ACBuy", search: "Søg finds", browse: "Se finds" },
-    sv: { visit: "Öppna ACBuy", search: "Sök finds", browse: "Bläddra finds" },
-    ar: { visit: "فتح ACBuy", search: "بحث Finds", browse: "تصفح Finds" },
-    cs: { visit: "Otevřít ACBuy", search: "Hledat finds", browse: "Procházet finds" }
+    en: { visit: "Visit Streetstyle", search: "Search Finds", browse: "Browse Finds" },
+    zh: { visit: "打开 Streetstyle", search: "搜索 Finds", browse: "浏览 Finds" },
+    pl: { visit: "Otwórz Streetstyle", search: "Szukaj finds", browse: "Przeglądaj finds" },
+    de: { visit: "Streetstyle öffnen", search: "Finds suchen", browse: "Finds ansehen" },
+    fr: { visit: "Ouvrir Streetstyle", search: "Rechercher finds", browse: "Parcourir finds" },
+    it: { visit: "Apri Streetstyle", search: "Cerca finds", browse: "Sfoglia finds" },
+    pt: { visit: "Abrir Streetstyle", search: "Pesquisar finds", browse: "Ver finds" },
+    es: { visit: "Abrir Streetstyle", search: "Buscar finds", browse: "Ver finds" },
+    nl: { visit: "Visit Streetstyle", search: "Zoek finds", browse: "Bekijk finds" },
+    da: { visit: "Åbn Streetstyle", search: "Søg finds", browse: "Se finds" },
+    sv: { visit: "Öppna Streetstyle", search: "Sök finds", browse: "Bläddra finds" },
+    ar: { visit: "فتح Streetstyle", search: "بحث Finds", browse: "تصفح Finds" },
+    cs: { visit: "Otevřít Streetstyle", search: "Hledat finds", browse: "Procházet finds" }
   };
 
   function getLang() {
@@ -1469,7 +1558,7 @@
     const labels = navLabels[lang] || navLabels.en;
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-    document.querySelectorAll(".brand small").forEach((node) => {
+    document.querySelectorAll(".brand small:not(.brand-tagline)").forEach((node) => {
       node.textContent = t.brandSub;
     });
     document.querySelectorAll("nav a").forEach((node) => {
@@ -1585,6 +1674,21 @@
         if (categoryNode.textContent !== categoryText) categoryNode.textContent = categoryText;
         const link = card.querySelector(".card-link");
         if (link) {
+          const productLinkLabels = {
+            en: "Search this find",
+            zh: "搜索这个单品",
+            pl: "Szukaj tego znaleziska",
+            es: "Buscar este find",
+            fr: "Rechercher ce find",
+            de: "Diesen Find suchen",
+            it: "Cerca questo find",
+            nl: "Zoek deze find",
+            pt: "Pesquisar este find",
+            da: "Søg dette find",
+            sv: "Sök detta find",
+            ar: "بحث عن هذا العنصر",
+            cs: "Hledat tento find"
+          };
           const searchWords = {
             en: "Search",
             zh: "搜索",
@@ -1600,7 +1704,10 @@
             ar: "بحث",
             cs: "Hledat"
           };
-          const linkText = `${searchWords[lang] || searchWords.en} ${categoryText}`;
+          const linkText =
+            link.dataset.linkKind === "product"
+              ? productLinkLabels[lang] || productLinkLabels.en
+              : `${searchWords[lang] || searchWords.en} ${categoryText}`;
           if (link.textContent !== linkText) link.textContent = linkText;
         }
       });
@@ -1683,7 +1790,7 @@
       <div class="article-cta">
         <h2>${escapeHtml(articleBody.ctaTitle)}</h2>
         <p>${escapeHtml(articleBody.ctaText)}</p>
-        <a class="button primary" href="https://maisonlooks.com/en/search?q=${encodeURIComponent(articleBody.ctaQuery)}" target="_blank" rel="noopener noreferrer">${escapeHtml(articleBody.ctaLabel)}</a>
+        <a class="button primary" href="${escapeHtml(articleBody.ctaHref || `https://streetstyle.maisonlooks.com/en/search?q=${encodeURIComponent(articleBody.ctaQuery)}`)}"${articleBody.ctaHref ? "" : ' target="_blank" rel="noopener noreferrer"'}>${escapeHtml(articleBody.ctaLabel)}</a>
       </div>
     `;
     document.title = `${article.title[lang] || article.title.en} - JoyaGoo Spreadsheet Guide`;

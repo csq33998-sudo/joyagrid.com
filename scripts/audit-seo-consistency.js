@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
+const { htmlPages } = require("./page-list");
 
-const routePages = ["finds.html", "categories.html", "guides.html", "blog.html", "about.html"];
-const files = ["index.html", ...routePages, ...fs.readdirSync("articles").filter((file) => file.endsWith(".html")).map((file) => path.join("articles", file))];
+const files = htmlPages();
 const failures = [];
 const warnings = [];
 
@@ -47,7 +47,7 @@ for (const file of files) {
   if (!canonical) failures.push(`${file} missing canonical URL`);
   if (title.length > 70) warnings.push(`${file} title is long (${title.length})`);
   if (description.length < 80 || description.length > 180) warnings.push(`${file} description length is ${description.length}`);
-  if (!/JoyaGoo|Joya Grid/i.test(title + " " + description)) warnings.push(`${file} missing brand in title/description`);
+  if (!/JoyaGoo|Joya ?Grid/i.test(title + " " + description)) warnings.push(`${file} missing brand in title/description`);
   if (ogTitle && ogTitle !== title) warnings.push(`${file} OG title differs from title`);
   if (ogDescription && ogDescription !== description) warnings.push(`${file} OG description differs from meta description`);
 
@@ -88,6 +88,27 @@ for (const file of files) {
   if (file === "blog.html") {
     if (!/JoyaGoo Spreadsheet Blog/i.test(title)) failures.push("blog title should target JoyaGoo Spreadsheet Blog");
     if (!/JoyaGoo spreadsheet/i.test(h1)) warnings.push("blog h1 should mention JoyaGoo spreadsheet");
+  }
+
+  if (file === "joyagoo-spreadsheet.html") {
+    if (!/Joyagoo Spreadsheet 2026/i.test(title)) failures.push("joyagoo-spreadsheet title should target Joyagoo Spreadsheet 2026");
+    if (!/Joyagoo Spreadsheet/i.test(h1)) warnings.push("joyagoo-spreadsheet h1 should mention Joyagoo Spreadsheet");
+  }
+
+  if (file === "joyagoo-spreadsheet-news.html") {
+    if (!/Joyagoo Spreadsheet Updates/i.test(title)) failures.push("joyagoo-spreadsheet-news title should target Joyagoo Spreadsheet Updates");
+    if (!/Joyagoo Spreadsheet Updates/i.test(h1)) warnings.push("joyagoo-spreadsheet-news h1 should mention updates");
+  }
+
+  if (file === "joyagoo-buying-guide.html") {
+    if (!/Joyagoo Buying Guide/i.test(title)) failures.push("joyagoo-buying-guide title should target Joyagoo Buying Guide");
+    if (!/Search, QC, sizing and shipping checks/i.test(h1)) warnings.push("joyagoo-buying-guide h1 should mention the buying checklist");
+  }
+
+  if (file === "agent-shopping-cost-calculator.html") {
+    if (!/Agent Shopping Cost Calculator/i.test(title)) failures.push("agent-shopping-cost-calculator title should target the calculator");
+    if (!/Agent Shopping Cost Calculator/i.test(h1)) warnings.push("agent-shopping-cost-calculator h1 should mention the calculator");
+    if (ogType !== "website") failures.push("agent-shopping-cost-calculator OG type should be website");
   }
 
   if (file.startsWith(`articles${path.sep}`)) {

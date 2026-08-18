@@ -43,7 +43,7 @@ Audit Google search readiness signals:
 - SEO-friendly homepage.
 - Searchable streetwear product board.
 - Category tabs for outfit discovery.
-- Audited outbound links to `maisonlooks.com/en/search`.
+- Audited outbound links to `streetstyle.maisonlooks.com/en/search`.
 - Lightweight local data in `js/products.js`.
 - Native language selector powered by `js/i18n.js` with English, German, French, Spanish, Italian, Dutch, and Portuguese content switching.
 

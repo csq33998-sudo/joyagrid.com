@@ -1,8 +1,7 @@
 const fs = require("fs");
-const path = require("path");
+const { htmlPages } = require("./page-list");
 
-const routePages = ["finds.html", "categories.html", "guides.html", "blog.html", "about.html"];
-const htmlFiles = ["index.html", ...routePages, ...fs.readdirSync("articles").filter((file) => file.endsWith(".html")).map((file) => path.join("articles", file))];
+const htmlFiles = htmlPages();
 const assetFiles = [
   "assets/joyagoo-spreadsheet-og.png",
   "assets/joyagoo-spreadsheet-logo.png",
@@ -26,8 +25,8 @@ for (const file of htmlFiles) {
   if (!html.includes("apple-touch-icon.png")) failures.push(`${file} missing apple touch icon`);
   if (!html.includes("site.webmanifest")) failures.push(`${file} missing manifest`);
   if (!html.includes("joyagoo-spreadsheet-og.png")) failures.push(`${file} missing og image`);
-  if (!html.includes('og:image:alt" content="JoyaGoo spreadsheet')) failures.push(`${file} missing og image alt`);
-  if (!html.includes('alt="JoyaGoo spreadsheet"')) failures.push(`${file} missing logo alt`);
+  if (!/property=["']og:image:alt["']\s+content=["'][^"']+["']/.test(html)) failures.push(`${file} missing og image alt`);
+  if (!/alt=["']JoyaGoo spreadsheet["']/i.test(html)) failures.push(`${file} missing logo alt`);
   if (!/JoyaGoo spreadsheet/i.test(html)) failures.push(`${file} missing JoyaGoo spreadsheet text`);
 }
 

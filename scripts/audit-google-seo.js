@@ -1,18 +1,9 @@
 const fs = require("fs");
 const path = require("path");
+const { htmlPages, routePages } = require("./page-list");
 
 const baseUrl = "https://joyagrid.com";
-const routePages = [
-  "finds.html",
-  "categories.html",
-  "guides.html",
-  "blog.html",
-  "about.html",
-  "joyagoo-spreadsheet.html",
-  "joyagoo-spreadsheet-news.html",
-  "joyagoo-buying-guide.html"
-];
-const htmlFiles = ["index.html", ...routePages, ...fs.readdirSync("articles").filter((file) => file.endsWith(".html")).map((file) => path.join("articles", file))];
+const htmlFiles = htmlPages();
 const failures = [];
 const warnings = [];
 
@@ -80,6 +71,9 @@ for (const file of htmlFiles) {
     check(JSON.stringify(schemas).includes('"Blog"'), "blog.html should include Blog schema");
   } else if (file === "about.html") {
     check(JSON.stringify(schemas).includes('"AboutPage"'), "about.html should include AboutPage schema");
+  } else if (file === "agent-shopping-cost-calculator.html") {
+    check(JSON.stringify(schemas).includes('"WebApplication"'), "agent-shopping-cost-calculator.html should include WebApplication schema");
+    check(JSON.stringify(schemas).includes('"BreadcrumbList"'), "agent-shopping-cost-calculator.html should include BreadcrumbList schema");
   } else {
     check(JSON.stringify(schemas).includes('"Article"'), `${file} should include Article schema`);
     check(JSON.stringify(schemas).includes('"BreadcrumbList"'), `${file} should include BreadcrumbList schema`);
