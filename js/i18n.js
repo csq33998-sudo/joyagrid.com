@@ -684,8 +684,29 @@
           ctaQuery: "hoodie"
         }
       }
-    }
-    ,
+    },
+    {
+      slug: "haul-planning-guide",
+      meta: { en: "Haul planning - 6 min read" },
+      title: { en: "Joyagoo haul planning guide for budget, QC and shipping" },
+      summary: { en: "Plan a Joyagoo haul with category balance, QC checks, sizing notes, total-cost estimates, and shipping risk control." },
+      body: {
+        en: {
+          eyebrow: "Haul planning",
+          lede: "A strong haul starts with a narrow shortlist, clear budget limits, and a real cost estimate before you commit. Use the joyagoo spreadsheet to compare finds by category, QC evidence, sizing confidence, and shipping risk.",
+          sections: [
+            ["Set a budget before browsing", "Split the budget into item cost, domestic shipping, service fees, international shipping, and a small exchange-rate buffer."],
+            ["Balance categories", "Build around the items you need most: sneakers, hoodies, pants, outerwear, bags, or accessories. Avoid filling the cart with duplicates."],
+            ["Check QC before adding more", "Review photos, measurements, color, stitching, materials, and seller-page details before expanding the shortlist."],
+            ["Estimate the packed weight", "Heavy shoes, thick hoodies, boxes, and outerwear can change total cost quickly. Compare the haul in the calculator before checkout."]
+          ],
+          ctaTitle: "Plan from the visual hub",
+          ctaText: "Use product cards, QC reminders, and the free calculator before building the final cart.",
+          ctaLabel: "joyagoo spreadsheet",
+          ctaHref: "/joyagoo-spreadsheet"
+        }
+      }
+    },
     {
       slug: "joyagoo-spreadsheet-reddit",
       meta: { en: "Reddit - 5 min read" },

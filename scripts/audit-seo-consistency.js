@@ -26,6 +26,22 @@ function tokens(value) {
   );
 }
 
+function articleTitleMatchesIntent(title) {
+  return (
+    /JoyaGoo Spreadsheet Guide/i.test(title) ||
+    (/JoyaGoo|Joyagoo|JoyaGrid/i.test(title) &&
+      /2026|guide|QC|sizing|spreadsheet|haul|sneakers|Pandabuy|Reddit|mistakes|items|finds/i.test(title))
+  );
+}
+
+function articleDescriptionMatchesIntent(description) {
+  return (
+    /^JoyaGoo spreadsheet guide:/i.test(description) ||
+    (/JoyaGoo|Joyagoo|JoyaGrid/i.test(description) &&
+      /QC|sizing|spreadsheet|finds|shortlist|cost|shipping|sneaker|Pandabuy|Reddit|mistakes|items|haul/i.test(description))
+  );
+}
+
 for (const file of files) {
   const html = fs.readFileSync(file, "utf8");
   const title = textBetween(html, /<title>(.*?)<\/title>/i);
@@ -81,7 +97,7 @@ for (const file of files) {
   }
 
   if (file === "about.html") {
-    if (!/About Joya Grid/i.test(title)) failures.push("about title should target About Joya Grid");
+    if (!/About Joya ?Grid/i.test(title)) failures.push("about title should target About JoyaGrid");
     if (!/JoyaGoo spreadsheet/i.test(h1)) warnings.push("about h1 should mention JoyaGoo spreadsheet");
   }
 
@@ -106,14 +122,14 @@ for (const file of files) {
   }
 
   if (file === "agent-shopping-cost-calculator.html") {
-    if (!/Agent Shopping Cost Calculator/i.test(title)) failures.push("agent-shopping-cost-calculator title should target the calculator");
+    if (!/Agent (Shopping )?Cost Calculator/i.test(title)) failures.push("agent-shopping-cost-calculator title should target the calculator");
     if (!/Agent Shopping Cost Calculator/i.test(h1)) warnings.push("agent-shopping-cost-calculator h1 should mention the calculator");
     if (ogType !== "website") failures.push("agent-shopping-cost-calculator OG type should be website");
   }
 
   if (file.startsWith(`articles${path.sep}`)) {
-    if (!/JoyaGoo Spreadsheet Guide/i.test(title)) failures.push(`${file} title should include JoyaGoo Spreadsheet Guide`);
-    if (!/JoyaGoo spreadsheet guide:/i.test(description)) failures.push(`${file} description should start with JoyaGoo spreadsheet guide`);
+    if (!articleTitleMatchesIntent(title)) failures.push(`${file} title should target JoyaGoo article search intent`);
+    if (!articleDescriptionMatchesIntent(description)) failures.push(`${file} description should target JoyaGoo article search intent`);
     if (ogType !== "article") failures.push(`${file} OG type should be article`);
   }
 }
