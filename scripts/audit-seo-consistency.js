@@ -45,6 +45,9 @@ for (const file of files) {
   if (!ogDescription) failures.push(`${file} missing OG description`);
   if (!ogType) failures.push(`${file} missing OG type`);
   if (!canonical) failures.push(`${file} missing canonical URL`);
+  if (!robots.toLowerCase().includes("index") || robots.toLowerCase().includes("noindex")) {
+    failures.push(`${file} should be indexable`);
+  }
   if (title.length > 70) warnings.push(`${file} title is long (${title.length})`);
   if (description.length < 80 || description.length > 180) warnings.push(`${file} description length is ${description.length}`);
   if (ogTitle && ogTitle !== title) warnings.push(`${file} OG title differs from title`);
@@ -67,7 +70,6 @@ for (const file of files) {
 
   if (file.startsWith(`articles${path.sep}`)) {
     if (ogType !== "article") failures.push(`${file} OG type should be article`);
-    if (!robots.toLowerCase().includes("noindex")) failures.push(`${file} must remain noindex until it has independent evidence`);
   }
 }
 

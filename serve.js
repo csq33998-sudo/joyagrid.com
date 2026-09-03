@@ -40,6 +40,10 @@ function resolveFile(urlPath) {
     ["joyagoo-spreadsheet-news", "joyagoo-spreadsheet-news.html"]
   ]);
   clean = cleanRoutes.get(clean) || clean;
+  if (!path.extname(clean)) {
+    const htmlCandidate = `${clean}.html`;
+    if (fs.existsSync(path.resolve(root, htmlCandidate))) clean = htmlCandidate;
+  }
 
   const file = path.resolve(root, clean);
   const relative = path.relative(root, file);

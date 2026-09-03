@@ -28,8 +28,16 @@ const frozenArticles = [
   "streetwear-color-palette-guide.html"
 ].sort();
 
-const pausedIndexes = [
-  "articles.html",
+const publicEditorialPages = [
+  "blog.html",
+  "guides.html",
+  "joyagoo-buying-guide.html",
+  "joyagoo-spreadsheet-news.html",
+  "joyagoo-spreadsheet.html",
+  "qc.html"
+];
+const guideNotePages = [
+  ...articlePages(),
   "blog.html",
   "guides.html",
   "joyagoo-buying-guide.html",
@@ -48,19 +56,26 @@ check(
   `article inventory changed; expected frozen set of ${frozenArticles.length}, found ${actualArticles.length}`
 );
 
-for (const file of [...articlePages(), ...pausedIndexes]) {
+for (const file of [...articlePages(), ...publicEditorialPages]) {
   const html = fs.readFileSync(file, "utf8");
-  check(robots(html).includes("noindex"), `${file} must remain noindex until it has independent evidence`);
-  check(html.includes("data-evidence-archive"), `${file} must display the evidence archive notice`);
-  check(html.includes("<strong>Guide note:</strong>"), `${file} must show the visitor-facing guide note`);
+  check(robots(html).includes("index") && !robots(html).includes("noindex"), `${file} must remain indexable`);
+  if (guideNotePages.includes(file)) {
+    check(html.includes("data-evidence-archive"), `${file} must display the guide note`);
+    check(html.includes("<strong>Guide note:</strong>"), `${file} must show the visitor-facing guide note`);
+  }
   check(!html.includes("Archived editorial draft:"), `${file} must not expose internal archive wording`);
 }
 
 const sitemap = fs.readFileSync("sitemap.xml", "utf8");
-for (const file of [...articlePages(), ...pausedIndexes]) {
-  const route = file.replace(/\\/g, "/").replace(/\.html$/, "");
-  check(!sitemap.includes(`https://joyagrid.com/${route}`), `sitemap must not include paused page ${route}`);
+for (const file of [...articlePages(), ...publicEditorialPages]) {
+  const html = fs.readFileSync(file, "utf8");
+  const canonical = html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i)?.[1] || "";
+  check(canonical && sitemap.includes(`<loc>${canonical}</loc>`), `sitemap must include public page ${canonical || file}`);
 }
+
+const legacyArticlesIndex = fs.readFileSync("articles.html", "utf8");
+check(robots(legacyArticlesIndex).includes("noindex"), "articles.html should remain a noindex duplicate of /guides");
+check(legacyArticlesIndex.includes('href="https://joyagrid.com/guides"'), "articles.html should canonicalize to /guides");
 
 const publicCore = ["index.html", "finds.html", "categories.html", "joyagoo-spreadsheet.html"];
 const internalCopyLeaks = [
@@ -155,5 +170,5 @@ if (failures.length) {
   console.error(failures.map((failure) => `FAIL ${failure}`).join("\n"));
   process.exitCode = 1;
 } else {
-  console.log(`OK content integrity frozenArticles=${frozenArticles.length} pausedIndexes=${pausedIndexes.length} sourceCheckedProducts=${products.length} productsWithQc=${productsWithQc}`);
+  console.log(`OK content integrity articles=${frozenArticles.length} publicEditorialPages=${publicEditorialPages.length} sourceCheckedProducts=${products.length} productsWithQc=${productsWithQc}`);
 }

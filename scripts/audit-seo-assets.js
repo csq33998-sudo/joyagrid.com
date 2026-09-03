@@ -24,7 +24,17 @@ for (const file of htmlFiles) {
   if (!html.includes("favicon-32x32.png")) failures.push(`${file} missing favicon`);
   if (!html.includes("apple-touch-icon.png")) failures.push(`${file} missing apple touch icon`);
   if (!html.includes("site.webmanifest")) failures.push(`${file} missing manifest`);
-  if (!html.includes("joyagoo-spreadsheet-og.png")) failures.push(`${file} missing og image`);
+  const ogImage = html.match(/property=["']og:image["']\s+content=["']([^"']+)["']/i)?.[1] || "";
+  if (!ogImage) {
+    failures.push(`${file} missing og image`);
+  } else if (ogImage.startsWith("https://joyagrid.com/assets/")) {
+    const localAsset = ogImage.replace("https://joyagrid.com/", "");
+    if (!fs.existsSync(localAsset)) failures.push(`${file} og image does not exist: ${localAsset}`);
+  } else if (ogImage.startsWith("/assets/")) {
+    if (!fs.existsSync(ogImage.slice(1))) failures.push(`${file} og image does not exist: ${ogImage}`);
+  } else {
+    failures.push(`${file} og image should use a JoyaGrid asset`);
+  }
   if (!/property=["']og:image:alt["']\s+content=["'][^"']+["']/.test(html)) failures.push(`${file} missing og image alt`);
   if (!/alt=["']JoyaGoo spreadsheet["']/i.test(html)) failures.push(`${file} missing logo alt`);
   if (!/JoyaGoo spreadsheet/i.test(html)) failures.push(`${file} missing JoyaGoo spreadsheet text`);

@@ -5,17 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Product QC Photos | JoyaGrid</title>
     <meta name="description" content="View matching buyer QC photos, size options, availability notes, and the current MaisonLooks product source." />
-    <meta name="robots" content="noindex,follow" />
+    <meta name="robots" content="index,follow" />
     <link rel="canonical" href="https://joyagrid.com/qc" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:title" content="Product QC Photos | JoyaGrid" />
-    <meta property="og:description" content="View buyer QC photos and open the matching MaisonLooks product source." />
+    <meta property="og:description" content="View matching buyer QC photos, size options, availability notes, and the current MaisonLooks product source." />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/joyagoo-spreadsheet-og.png" />
+    <meta property="og:image:alt" content="JoyaGrid product QC gallery" />
     <link rel="stylesheet" href="/styles.css?v=7" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": "https://joyagrid.com/qc?schema=collection",
+          "url": "https://joyagrid.com/qc",
+          "name": "Product QC Galleries",
+          "description": "Browse product-specific buyer QC photo galleries and the matching MaisonLooks source pages.",
+          "isPartOf": { "@id": "https://joyagrid.com/?schema=website" },
+          "inLanguage": "en"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://joyagrid.com/qc?schema=breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://joyagrid.com/" },
+            { "@type": "ListItem", "position": 2, "name": "QC Galleries", "item": "https://joyagrid.com/qc" }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="qc-page">
     <a class="skip-link" id="qcSkipLink" href="/qc?section=qc-records">Skip to QC photos</a>
@@ -40,10 +65,34 @@
       <section class="section qc-page-section" id="qc-records">
         <div class="section-heading">
           <p class="eyebrow">QC photo gallery</p>
-          <h1 id="qcPageTitle">Opening QC gallery…</h1>
-          <p id="qcPageSummary">Loading product photos and details.</p>
+          <h1 id="qcPageTitle">Product QC galleries</h1>
+          <p id="qcPageSummary">Choose a product to view its buyer QC previews and matching MaisonLooks page.</p>
         </div>
         <aside class="article-cta"><strong>About these photos:</strong> previews come from the matching MaisonLooks buyer QC gallery. Open MaisonLooks for the complete, current photo and video set.</aside>
+        <!-- QC_LINKS_START -->
+        <nav class="category-tabs" aria-label="Product QC gallery links">
+          <a href="/qc/clean-low-sneaker">Nike Air Force 1 White Rope Laces Sneakers</a>
+          <a href="/qc/retro-runner-shoe">Asics Gel-NYC White/Green Sneakers</a>
+          <a href="/qc/court-training-sneaker">Adidas Samba White/Black Sneakers</a>
+          <a href="/qc/gallery-graphic-tee">Amiri Black Leopard Print T-Shirt</a>
+          <a href="/qc/tech-audio-headphones">Apple AirPods Max (Plastic) Black Headphones</a>
+          <a href="/qc/white-logo-cap">Prada White Logo Cap Headwear</a>
+          <a href="/qc/air-jordan-4-black-white">Nike Air Jordan 4 Black/White Sneakers</a>
+          <a href="/qc/gel-kayano-white-black">ASICS Gel-Kayano 26 White/Black Sneakers</a>
+          <a href="/qc/margiela-replica-beige">Maison Margiela Replica Beige Low Sneakers</a>
+          <a href="/qc/lv-trainer-white-blue">Louis Vuitton LV Trainer White/Blue Sneakers</a>
+          <a href="/qc/arrow-sneaker-black-yellow">Unisex Black &amp; Yellow Arrow Sneakers</a>
+          <a href="/qc/mm6-blakey-black-white">MM6 Blakey Black &amp; White Sneakers</a>
+          <a href="/qc/pegasus-black-orange">Nike Air Zoom Pegasus Black/Orange Sneakers</a>
+          <a href="/qc/erd-black-tee">Enfants Riches Déprimés &#39;ERD&#39; Black T-Shirt</a>
+          <a href="/qc/gallery-art-that-kills-tee">Gallery Dept. Art That Kills Black T-Shirt</a>
+          <a href="/qc/distressed-denim-jeans">Distressed Denim Jeans with Rips and Paint Splatter</a>
+          <a href="/qc/dior-oblique-cardholder">Dior Oblique Card Holder Black</a>
+          <a href="/qc/corteiz-track-pants">Corteiz RTW Black Track Pants with White Piping</a>
+          <a href="/qc/supreme-99-long-sleeve">Supreme White &#39;99&#39; Long Sleeve T-Shirt</a>
+          <a href="/qc/psg-black-gold-jersey">Paris Saint-Germain Qatar Airways Black &amp; Gold Jersey</a>
+        </nav>
+        <!-- QC_LINKS_END -->
         <div id="qcRecordGrid" class="qc-record-grid" aria-live="polite"></div>
       </section>
     </main>

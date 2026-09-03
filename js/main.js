@@ -25,7 +25,9 @@
   const qcRecordGrid = document.querySelector("#qcRecordGrid");
   const qcPage = document.querySelector("[data-qc-page]");
   const header = document.querySelector(".site-header");
-  const requestedProductId = new URLSearchParams(window.location.search).get("product");
+  const qcPathMatch = window.location.pathname.match(/^\/qc\/([^/?#]+)\/?$/);
+  const requestedProductId = new URLSearchParams(window.location.search).get("product")
+    || (qcPathMatch ? decodeURIComponent(qcPathMatch[1]) : null);
 
   const categories = ["All", ...Array.from(new Set(products.map((product) => product.category)))];
 
@@ -44,7 +46,7 @@
   }
 
   function qcUrl(product) {
-    return `/qc?product=${encodeURIComponent(product.id)}`;
+    return `/qc/${encodeURIComponent(product.id)}`;
   }
 
   function qcImages(product) {
@@ -159,11 +161,13 @@
       const title = document.querySelector("#qcPageTitle");
       const summary = document.querySelector("#qcPageSummary");
       if (requestedProduct) {
-        document.title = `${requestedProduct.name} QC Photos | JoyaGrid`;
+        // Clean product QC routes ship with complete, product-specific metadata.
+        // Keep that server-visible title instead of replacing it after render.
+        if (!qcPathMatch) document.title = `${requestedProduct.name} QC Photos | JoyaGrid`;
         if (title) title.textContent = requestedProduct.name;
         if (summary) summary.textContent = `Buyer QC previews, size options, availability, and the matching MaisonLooks page for ${requestedProduct.name}.`;
         const skipLink = document.querySelector("#qcSkipLink");
-        if (skipLink) skipLink.href = `${qcUrl(requestedProduct)}&section=qc-records`;
+        if (skipLink) skipLink.href = `${qcUrl(requestedProduct)}?section=qc-records`;
       } else if (requestedProductId) {
         document.title = "QC Gallery Not Found | JoyaGrid";
         if (title) title.textContent = "QC gallery not found";

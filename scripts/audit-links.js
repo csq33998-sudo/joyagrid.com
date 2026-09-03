@@ -42,7 +42,11 @@ const generatedUrls = products.flatMap((product) => [
   searchUrl(categoryQueries[product.category] || product.category),
   product.sourceUrl
 ]);
-const urls = Array.from(new Set([...staticUrls, ...generatedUrls]));
+// QC media URLs are image assets and are validated through the product/QC data
+// audit. This network check focuses on navigational page links.
+const urls = Array.from(new Set([...staticUrls, ...generatedUrls])).filter(
+  (url) => !url.startsWith("https://cdn.maisonlooks.com/")
+);
 
 (async () => {
   let failed = false;

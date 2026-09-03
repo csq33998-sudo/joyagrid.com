@@ -59,7 +59,7 @@ async function verifyHttpOnly(note) {
     request("/about"),
     request("/guides"),
     request("/joyagoo-spreadsheet"),
-    request("/qc?product=clean-low-sneaker"),
+    request("/qc/clean-low-sneaker"),
     request("/joyagoo-spreadsheet-news"),
     request("/joyagoo-buying-guide"),
     request("/agent-shopping-cost-calculator"),
@@ -166,7 +166,7 @@ async function verifyWithBrowser() {
   const qcRecords = await page.locator(".qc-record").count();
   const requiredQcTargets = await page.locator("#qc-clean-low-sneaker, #qc-retro-runner-shoe, #qc-court-training-sneaker").count();
 
-  if (!firstQcLink || !firstQcLink.startsWith("/qc?product=") || firstQcLink.includes("#")) throw new Error(`Invalid QC link: ${firstQcLink}`);
+  if (!firstQcLink || !firstQcLink.startsWith("/qc/") || firstQcLink.includes("?") || firstQcLink.includes("#")) throw new Error(`Invalid QC link: ${firstQcLink}`);
   await page.goto(new URL(firstQcLink, `http://127.0.0.1:${port}`).toString(), { waitUntil: "domcontentloaded" });
   await page.waitForSelector('.qc-record[data-active="true"]');
   const qcTitle = await page.locator("#qcPageTitle").textContent();

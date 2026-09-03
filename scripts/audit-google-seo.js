@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { htmlPages, routePages } = require("./page-list");
+const { htmlPages } = require("./page-list");
 
 const baseUrl = "https://joyagrid.com";
 const htmlFiles = htmlPages();
@@ -37,7 +37,7 @@ if (fs.existsSync("sitemap.xml")) {
   for (const file of htmlFiles) {
     const html = fs.readFileSync(file, "utf8");
     const robots = textBetween(html, /<meta\s+name=["']robots["']\s+content=["']([^"']+)["']/i).toLowerCase();
-    const route = routePages.includes(file) ? file.replace(/\.html$/, "") : file.replace(/\\/g, "/");
+    const route = file.replace(/\\/g, "/").replace(/\.html$/, "");
     const url = file === "index.html" ? `${baseUrl}/` : `${baseUrl}/${route}`;
     if (robots.includes("noindex")) {
       check(!sitemap.includes(`<loc>${url}</loc>`), `sitemap.xml should exclude noindex URL ${url}`);
@@ -60,7 +60,7 @@ for (const file of htmlFiles) {
 
   if (file === "index.html") {
     check(JSON.stringify(schemas).includes('"WebSite"'), "index should include WebSite schema");
-  } else if (["finds.html", "categories.html", "guides.html", "joyagoo-spreadsheet-news.html"].includes(file)) {
+  } else if (["finds.html", "categories.html", "guides.html", "joyagoo-spreadsheet-news.html", "qc.html"].includes(file)) {
     check(JSON.stringify(schemas).includes('"CollectionPage"'), `${file} should include CollectionPage schema`);
   } else if (file === "blog.html") {
     check(JSON.stringify(schemas).includes('"Blog"'), "blog.html should include Blog schema");
@@ -69,6 +69,9 @@ for (const file of htmlFiles) {
   } else if (file === "agent-shopping-cost-calculator.html") {
     check(JSON.stringify(schemas).includes('"WebApplication"'), "agent-shopping-cost-calculator.html should include WebApplication schema");
     check(JSON.stringify(schemas).includes('"BreadcrumbList"'), "agent-shopping-cost-calculator.html should include BreadcrumbList schema");
+  } else if (file.startsWith(`qc${path.sep}`)) {
+    check(JSON.stringify(schemas).includes('"ImageGallery"'), `${file} should include ImageGallery schema`);
+    check(JSON.stringify(schemas).includes('"BreadcrumbList"'), `${file} should include BreadcrumbList schema`);
   } else {
     check(JSON.stringify(schemas).includes('"Article"'), `${file} should include Article schema`);
     check(JSON.stringify(schemas).includes('"BreadcrumbList"'), `${file} should include BreadcrumbList schema`);
