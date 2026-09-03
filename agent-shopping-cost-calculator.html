@@ -26,20 +26,20 @@
       "@graph": [
         {
           "@type": "WebApplication",
-          "@id": "https://joyagrid.com/agent-shopping-cost-calculator#app",
+          "@id": "https://joyagrid.com/agent-shopping-cost-calculator?schema=app",
           "name": "Agent Shopping Cost Calculator",
           "url": "https://joyagrid.com/agent-shopping-cost-calculator",
           "applicationCategory": "ShoppingApplication",
           "operatingSystem": "Any",
           "description": "Estimate total agent shopping cost from item price, domestic shipping, service fee, international shipping, coupons, and exchange buffer.",
           "publisher": {
-            "@id": "https://joyagrid.com/#organization"
+            "@id": "https://joyagrid.com/?schema=organization"
           },
           "inLanguage": "en"
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://joyagrid.com/agent-shopping-cost-calculator#breadcrumb",
+          "@id": "https://joyagrid.com/agent-shopping-cost-calculator?schema=breadcrumb",
           "itemListElement": [
             {
               "@type": "ListItem",
@@ -57,7 +57,7 @@
         },
         {
           "@type": "FAQPage",
-          "@id": "https://joyagrid.com/agent-shopping-cost-calculator#faq",
+          "@id": "https://joyagrid.com/agent-shopping-cost-calculator?schema=faq",
           "mainEntity": [
             {
               "@type": "Question",
@@ -82,10 +82,10 @@
     </script>
   </head>
   <body class="article-page calculator-page">
-    <a class="skip-link" href="#calculator">Skip to calculator</a>
+    <a class="skip-link" href="/agent-shopping-cost-calculator?section=calculator">Skip to calculator</a>
 
     <header class="site-header" data-elevated="false">
-      <a class="brand" href="/" aria-label="joyagoo spreadsheet home"><span class="brand-lockup"><img class="brand-wordmark" src="/assets/joyagoo-wordmark.png" alt="joyagoo spreadsheet" width="294" height="70" /><small class="brand-tagline">Discover more curated Joyagoo finds</small></span></a>
+      <a class="brand" href="/" aria-label="joyagoo spreadsheet home"><span class="brand-lockup"><img class="brand-wordmark" src="/assets/joyagoo-wordmark.png" alt="joyagoo spreadsheet" width="294" height="70" /><small class="brand-tagline">Product finds and QC photos</small></span></a>
       <nav aria-label="Primary navigation">
         <a href="/">Home</a>
         <a href="/joyagoo-spreadsheet">Spreadsheet</a>
@@ -237,6 +237,6 @@
         calculate();
       })();
     </script>
-    <script src="js/i18n.js"></script>
+    <script src="js/i18n.js?v=2"></script>
   </body>
 </html>

@@ -26,22 +26,6 @@ function tokens(value) {
   );
 }
 
-function articleTitleMatchesIntent(title) {
-  return (
-    /JoyaGoo Spreadsheet Guide/i.test(title) ||
-    (/JoyaGoo|Joyagoo|JoyaGrid/i.test(title) &&
-      /2026|guide|QC|sizing|spreadsheet|haul|sneakers|Pandabuy|Reddit|mistakes|items|finds/i.test(title))
-  );
-}
-
-function articleDescriptionMatchesIntent(description) {
-  return (
-    /^JoyaGoo spreadsheet guide:/i.test(description) ||
-    (/JoyaGoo|Joyagoo|JoyaGrid/i.test(description) &&
-      /QC|sizing|spreadsheet|finds|shortlist|cost|shipping|sneaker|Pandabuy|Reddit|mistakes|items|haul/i.test(description))
-  );
-}
-
 for (const file of files) {
   const html = fs.readFileSync(file, "utf8");
   const title = textBetween(html, /<title>(.*?)<\/title>/i);
@@ -63,7 +47,6 @@ for (const file of files) {
   if (!canonical) failures.push(`${file} missing canonical URL`);
   if (title.length > 70) warnings.push(`${file} title is long (${title.length})`);
   if (description.length < 80 || description.length > 180) warnings.push(`${file} description length is ${description.length}`);
-  if (!/JoyaGoo|Joya ?Grid/i.test(title + " " + description)) warnings.push(`${file} missing brand in title/description`);
   if (ogTitle && ogTitle !== title) warnings.push(`${file} OG title differs from title`);
   if (ogDescription && ogDescription !== description) warnings.push(`${file} OG description differs from meta description`);
 
@@ -75,62 +58,16 @@ for (const file of files) {
   }
 
   if (file === "index.html") {
-    if (!/JoyaGoo Spreadsheet/i.test(title)) failures.push("index title should target JoyaGoo Spreadsheet");
-    if (!/JoyaGoo spreadsheet/i.test(description)) failures.push("index description should target JoyaGoo spreadsheet");
-    if (!/JoyaGoo Spreadsheet/i.test(h1)) warnings.push("index h1 should match JoyaGoo Spreadsheet positioning");
     if (ogType !== "website") failures.push("index OG type should be website");
   }
 
-  if (file === "guides.html") {
-    if (!/JoyaGoo Spreadsheet Guides/i.test(title)) failures.push("guides index title should target JoyaGoo Spreadsheet Guides");
-    if (!/guides/i.test(h1)) warnings.push("guides index h1 should mention guides");
-  }
-
-  if (file === "finds.html") {
-    if (!/JoyaGoo Spreadsheet Finds/i.test(title)) failures.push("finds title should target JoyaGoo Spreadsheet Finds");
-    if (!/finds/i.test(h1)) warnings.push("finds h1 should mention finds");
-  }
-
-  if (file === "categories.html") {
-    if (!/JoyaGoo Spreadsheet Categories/i.test(title)) failures.push("categories title should target JoyaGoo Spreadsheet Categories");
-    if (!/categories/i.test(h1)) warnings.push("categories h1 should mention categories");
-  }
-
-  if (file === "about.html") {
-    if (!/About Joya ?Grid/i.test(title)) failures.push("about title should target About JoyaGrid");
-    if (!/JoyaGoo spreadsheet/i.test(h1)) warnings.push("about h1 should mention JoyaGoo spreadsheet");
-  }
-
-  if (file === "blog.html") {
-    if (!/JoyaGoo Spreadsheet Blog/i.test(title)) failures.push("blog title should target JoyaGoo Spreadsheet Blog");
-    if (!/JoyaGoo spreadsheet/i.test(h1)) warnings.push("blog h1 should mention JoyaGoo spreadsheet");
-  }
-
-  if (file === "joyagoo-spreadsheet.html") {
-    if (!/Joyagoo Spreadsheet 2026/i.test(title)) failures.push("joyagoo-spreadsheet title should target Joyagoo Spreadsheet 2026");
-    if (!/Joyagoo Spreadsheet/i.test(h1)) warnings.push("joyagoo-spreadsheet h1 should mention Joyagoo Spreadsheet");
-  }
-
-  if (file === "joyagoo-spreadsheet-news.html") {
-    if (!/Joyagoo Spreadsheet Updates/i.test(title)) failures.push("joyagoo-spreadsheet-news title should target Joyagoo Spreadsheet Updates");
-    if (!/Joyagoo Spreadsheet Updates/i.test(h1)) warnings.push("joyagoo-spreadsheet-news h1 should mention updates");
-  }
-
-  if (file === "joyagoo-buying-guide.html") {
-    if (!/Joyagoo Buying Guide/i.test(title)) failures.push("joyagoo-buying-guide title should target Joyagoo Buying Guide");
-    if (!/Search, QC, sizing and shipping checks/i.test(h1)) warnings.push("joyagoo-buying-guide h1 should mention the buying checklist");
-  }
-
   if (file === "agent-shopping-cost-calculator.html") {
-    if (!/Agent (Shopping )?Cost Calculator/i.test(title)) failures.push("agent-shopping-cost-calculator title should target the calculator");
-    if (!/Agent Shopping Cost Calculator/i.test(h1)) warnings.push("agent-shopping-cost-calculator h1 should mention the calculator");
     if (ogType !== "website") failures.push("agent-shopping-cost-calculator OG type should be website");
   }
 
   if (file.startsWith(`articles${path.sep}`)) {
-    if (!articleTitleMatchesIntent(title)) failures.push(`${file} title should target JoyaGoo article search intent`);
-    if (!articleDescriptionMatchesIntent(description)) failures.push(`${file} description should target JoyaGoo article search intent`);
     if (ogType !== "article") failures.push(`${file} OG type should be article`);
+    if (!robots.toLowerCase().includes("noindex")) failures.push(`${file} must remain noindex until it has independent evidence`);
   }
 }
 

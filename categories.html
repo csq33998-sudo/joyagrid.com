@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>JoyaGoo Spreadsheet Categories - Streetwear Routes</title>
+    <title>Streetwear Style Categories and Search Routes | JoyaGrid</title>
     <meta
       name="description"
-      content="Use JoyaGoo spreadsheet categories to browse streetwear finds by mood, product type, sneakers, bags, accessories, pants, and outerwear."
+      content="Browse MaisonLooks products by streetwear category, with direct product links and matching QC photo galleries."
     />
     <meta name="robots" content="index,follow" />
-    <meta property="og:title" content="JoyaGoo Spreadsheet Categories - Streetwear Routes" />
-    <meta property="og:description" content="Use JoyaGoo spreadsheet categories to browse streetwear finds by mood, product type, sneakers, bags, accessories, pants, and outerwear." />
+    <meta property="og:title" content="Streetwear Style Categories and Search Routes | JoyaGrid" />
+    <meta property="og:description" content="Browse MaisonLooks products by streetwear category, with direct product links and matching QC photo galleries." />
     <meta property="og:type" content="website" />
     <link rel="canonical" href="https://joyagrid.com/categories" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
@@ -19,27 +19,27 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:image" content="/assets/joyagoo-spreadsheet-og.png" />
     <meta property="og:image:alt" content="JoyaGoo spreadsheet" />
-    <link rel="stylesheet" href="styles.css?v=2" />
+    <link rel="stylesheet" href="styles.css?v=7" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "@id": "https://joyagrid.com/categories#collection",
+      "@id": "https://joyagrid.com/categories?schema=collection",
       "url": "https://joyagrid.com/categories",
-      "name": "JoyaGoo Spreadsheet Categories - Streetwear Routes",
-      "description": "Use JoyaGoo spreadsheet categories to browse streetwear finds by mood, product type, sneakers, bags, accessories, pants, and outerwear.",
+      "name": "Streetwear Style Categories and Search Routes",
+      "description": "Streetwear category routes for MaisonLooks products with direct source and QC photo links.",
       "isPartOf": {
-        "@id": "https://joyagrid.com/#website"
+        "@id": "https://joyagrid.com/?schema=website"
       },
       "inLanguage": "en"
     }
     </script>
   </head>
   <body class="route-page">
-    <a class="skip-link" href="#categories">Skip to categories</a>
+    <a class="skip-link" href="/categories?section=categories">Skip to categories</a>
 
     <header class="site-header" data-elevated="false">
-      <a class="brand" href="/" aria-label="joyagoo spreadsheet home"><span class="brand-lockup"><img class="brand-wordmark" src="/assets/joyagoo-wordmark.png" alt="joyagoo spreadsheet" width="294" height="70" /><small class="brand-tagline">Discover more curated Joyagoo finds</small></span></a>
+      <a class="brand" href="/" aria-label="joyagoo spreadsheet home"><span class="brand-lockup"><img class="brand-wordmark" src="/assets/joyagoo-wordmark.png" alt="joyagoo spreadsheet" width="294" height="70" /><small class="brand-tagline">Product finds and QC photos</small></span></a>
       <nav aria-label="Primary navigation">
         <a href="/">Home</a>
         <a href="/joyagoo-spreadsheet">Spreadsheet</a>
@@ -57,13 +57,13 @@
       <section class="article-hero">
         <p class="eyebrow">Shop by mood</p>
         <h1>Streetwear categories</h1>
-        <p>Use fast category routes through the JoyaGoo spreadsheet board before opening a focused Maison Looks search.</p>
+        <p>Choose a category, open a product for current details, or use its QC button to view matching buyer photos.</p>
       </section>
 
       <section id="categories" class="section">
         <div class="section-heading">
           <p class="eyebrow">Category routes</p>
-          <h2>Fast paths into the archive</h2>
+          <h2>Choose a product category</h2>
         </div>
         <div id="categoryTabs" class="category-tabs" aria-label="Product category links"></div>
       </section>
@@ -71,25 +71,26 @@
       <section class="section finds-section">
         <div class="section-heading split">
           <div>
-            <p class="eyebrow">Filtered board</p>
-            <h2>Browse by category</h2>
+            <p class="eyebrow">Product finds</p>
+            <h2>Explore products by category</h2>
           </div>
           <p id="resultCount" class="muted"></p>
         </div>
         <div id="productGrid" class="product-grid" aria-live="polite"></div>
         <div id="emptyState" class="empty-state" hidden>
-          <h3>No matching finds</h3>
-          <p>Choose another category or return to all finds.</p>
+          <h3>No matching products</h3>
+          <p>Choose another category or return to all products.</p>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Joya Grid is an independent inspiration and discovery site. Product imagery and prices are editorial examples.</p>
+      <p>JoyaGrid is independent. Product photos and buyer QC photos are labeled separately; confirm current details on MaisonLooks before buying.</p>
     </footer>
 
-    <script src="js/products.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/i18n.js"></script>
+    <script src="js/products.js?v=4"></script>
+    <script src="js/qc-data.js?v=1"></script>
+    <script src="js/main.js?v=5"></script>
+    <script src="js/i18n.js?v=2"></script>
   </body>
 </html>

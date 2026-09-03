@@ -38,18 +38,24 @@ Audit Google search readiness signals:
 & "C:\Users\chu\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe" scripts\audit-google-seo.js
 ```
 
+Audit the evidence boundary and the freeze on new query-targeted articles:
+
+```powershell
+& "C:\Users\chu\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe" scripts\audit-content-integrity.js
+```
+
 ## Current MVP
 
 - SEO-friendly homepage.
-- Searchable streetwear product board.
+- Searchable interface demo with clearly labeled illustrative style cards.
 - Category tabs for outfit discovery.
 - Audited outbound links to `streetstyle.maisonlooks.com/en/search`.
-- Lightweight local data in `js/products.js`.
+- Twenty dated MaisonLooks product records in `js/products.js`, with matching buyer-QC preview metadata in `js/qc-data.js` and direct links back to the current source galleries.
 - Native language selector powered by `js/i18n.js` with English, German, French, Spanish, Italian, Dutch, and Portuguese content switching.
 
 ## Next Stack Upgrade
 
-When the site is ready for real inventory and daily publishing, migrate the data layer to:
+Do not resume product or article publishing until each record has a source URL, capture date, exact variant, price provenance, original or licensed evidence images, a stated verification method, and an accountable author. If that evidence-backed scope later requires a larger data layer, consider:
 
 - Next.js App Router for static and incremental category/product pages.
 - Supabase Postgres for products, categories, click logs, and admin access.

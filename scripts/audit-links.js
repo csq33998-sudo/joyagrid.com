@@ -28,6 +28,7 @@ const categoryQueries = {
   Pants: "pants",
   Skirts: "skirts",
   Sneakers: "shoes",
+  Tech: "electronics",
   "T-Shirts": "t shirts"
 };
 
@@ -39,7 +40,7 @@ function searchUrl(query) {
 
 const generatedUrls = products.flatMap((product) => [
   searchUrl(categoryQueries[product.category] || product.category),
-  searchUrl(product.name)
+  product.sourceUrl
 ]);
 const urls = Array.from(new Set([...staticUrls, ...generatedUrls]));
 
@@ -63,7 +64,7 @@ const urls = Array.from(new Set([...staticUrls, ...generatedUrls]));
 
 function isProtectedExternal(rawUrl, status) {
   const { hostname, pathname } = new URL(rawUrl);
-  if (hostname === "streetstyle.maisonlooks.com" && (!status || status === 403)) return true;
+  if ((hostname === "maisonlooks.com" || hostname.endsWith(".maisonlooks.com")) && (!status || status === 403 || status === 429)) return true;
   if (hostname === "www.google.com" && pathname === "/search" && (!status || status === 403 || status === 429)) return true;
   return false;
 }

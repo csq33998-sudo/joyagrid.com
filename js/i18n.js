@@ -742,7 +742,7 @@
             ["Best sneaker items", "Prioritize shoes with side-profile photos, outsole detail, insole measurements, and consistent color. A pair that looks clean in several angles is stronger than a pair with only one hero image."],
             ["Best streetwear items", "Look for hoodies, tees, pants, and outerwear with clear measurements. Fabric weight, print placement, wash effect, and shoulder shape matter more than copied seller titles."],
             ["Best bags and accessories", "Strong accessory finds show hardware, zippers, straps, texture, and scale. For everyday carry, utility and comfort are as important as the first image."],
-            ["How to rank your shortlist", "Score each find by photo quality, sizing confidence, price, shipping risk, and how well it fits your existing wardrobe. Remove anything that needs too many assumptions."]
+            ["How to evaluate your shortlist", "Score each find by photo quality, sizing confidence, price, shipping risk, and how well it fits your existing wardrobe. Remove anything that needs too many assumptions."]
           ],
           ctaTitle: "Browse the top-find hub",
           ctaText: "Use the product cards and FAQ to compare popular finds before opening buy links.",
@@ -759,11 +759,11 @@
       body: {
         en: {
           eyebrow: "Comparison",
-          lede: "Comparison searches usually come from users who already know spreadsheet-style agent research but want a clearer workflow. The safest answer is to compare research quality, not hype. Use this page as a decision guide, then return to the main joyagoo spreadsheet.",
+          lede: "If you already know spreadsheet-style agent research but want a clearer workflow, compare the quality of the evidence rather than the platform hype. Use this page as a decision guide, then return to the main Joyagoo spreadsheet.",
           sections: [
             ["Compare category coverage", "Look at whether each spreadsheet has the categories you actually need: shoes, hoodies, pants, bags, accessories, tech, or full outfit ideas. A larger catalog is not automatically better if your category is poorly organized."],
             ["Compare QC visibility", "QC context matters more than the platform name. Prefer entries that make photos, measurements, and seller-page checks easy to review before you commit."],
-            ["Compare update habits", "Spreadsheet value drops when links expire or prices drift. Pages with visible update notes, category reviews, and freshness signals are easier to trust as research surfaces."],
+            ["Compare update habits", "Spreadsheet value drops when links expire or prices drift. Dated change notes and category reviews help explain what was checked, but every product page and price still needs confirmation."],
             ["Compare buying risk", "Agent availability, payment rules, shipping rules, and support can change. Verify current terms at the destination before using any spreadsheet row as an order path."]
           ],
           ctaTitle: "Use the visual hub first",
@@ -893,9 +893,9 @@
         guidesEyebrow: "Buying guides",
         guidesTitle: "Read before you search",
         viewAll: "View all guides",
-        aboutEyebrow: "Promotion model",
-        aboutTitle: "Built to send style traffic to Maison Looks",
-        aboutText: "This site acts as a lightweight discovery layer: curated categories, searchable outfit cards, strong image previews, and consistent outbound links to Maison Looks search results.",
+        aboutEyebrow: "Independent discovery",
+        aboutTitle: "A clearer route from finds to checks",
+        aboutText: "Joya Grid organizes curated categories, visual cards, QC prompts, sizing guidance, cost planning, and research paths so visitors can compare options before buying.",
         explore: "Explore Street Style"
       },
       list: {
@@ -929,9 +929,9 @@
         guidesEyebrow: "购买指南",
         guidesTitle: "搜索前先阅读",
         viewAll: "查看全部指南",
-        aboutEyebrow: "推广模式",
-        aboutTitle: "为 Maison Looks 输送风格流量",
-        aboutText: "本站是轻量级发现层：精选分类、可搜索穿搭卡片、清晰图片预览，以及稳定跳转到 Maison Looks 搜索结果。",
+        aboutEyebrow: "独立发现",
+        aboutTitle: "从发现到核验的清晰路径",
+        aboutText: "Joya Grid 整理精选分类、视觉卡片、QC 提示、尺码指南、成本规划和研究路径，帮助访客在购买前比较不同选项。",
         explore: "探索 Street Style"
       },
       list: {
@@ -965,9 +965,9 @@
         guidesEyebrow: "Poradniki zakupowe",
         guidesTitle: "Przeczytaj przed szukaniem",
         viewAll: "Zobacz wszystkie poradniki",
-        aboutEyebrow: "Model promocji",
-        aboutTitle: "Zbudowane, aby kierować ruch do Maison Looks",
-        aboutText: "Ta strona działa jako lekka warstwa odkrywania: kategorie, wyszukiwalne karty outfitów, mocne podglądy i linki do wyników Maison Looks.",
+        aboutEyebrow: "Niezależne odkrywanie",
+        aboutTitle: "Prostsza droga od znaleziska do weryfikacji",
+        aboutText: "Joya Grid porządkuje kategorie, karty wizualne, wskazówki QC, rozmiary, koszty i ścieżki badawcze, aby ułatwić porównanie przed zakupem.",
         explore: "Odkryj Street Style"
       },
       list: {
@@ -1001,9 +1001,9 @@
         guidesEyebrow: "Guias de compra",
         guidesTitle: "Lee antes de buscar",
         viewAll: "Ver todas las guias",
-        aboutEyebrow: "Modelo de promocion",
-        aboutTitle: "Creado para enviar trafico de estilo a Maison Looks",
-        aboutText: "Este sitio funciona como una capa ligera de descubrimiento: categorias curadas, tarjetas buscables, buenas vistas previas y enlaces consistentes a resultados de Maison Looks.",
+        aboutEyebrow: "Descubrimiento independiente",
+        aboutTitle: "Una ruta más clara del hallazgo a la verificación",
+        aboutText: "Joya Grid organiza categorías, tarjetas visuales, controles QC, tallas, costes y rutas de investigación para comparar opciones antes de comprar.",
         explore: "Explorar Street Style"
       },
       list: {
@@ -1037,9 +1037,9 @@
         guidesEyebrow: "Guides d'achat",
         guidesTitle: "Lire avant de chercher",
         viewAll: "Voir tous les guides",
-        aboutEyebrow: "Modele de promotion",
-        aboutTitle: "Concu pour envoyer du trafic style vers Maison Looks",
-        aboutText: "Ce site sert de couche de decouverte legere: categories curatives, cartes consultables, apercus visuels solides et liens vers les resultats Maison Looks.",
+        aboutEyebrow: "Découverte indépendante",
+        aboutTitle: "Un parcours plus clair de la trouvaille à la vérification",
+        aboutText: "Joya Grid organise catégories, cartes visuelles, contrôles QC, tailles, coûts et parcours de recherche pour comparer avant l'achat.",
         explore: "Explorer Street Style"
       },
       list: {
@@ -1073,9 +1073,9 @@
         guidesEyebrow: "Kauf-Guides",
         guidesTitle: "Vor dem Suchen lesen",
         viewAll: "Alle Guides ansehen",
-        aboutEyebrow: "Promotion-Modell",
-        aboutTitle: "Gebaut, um Style-Traffic zu Maison Looks zu senden",
-        aboutText: "Diese Seite ist eine leichte Discovery-Schicht: kuratierte Kategorien, durchsuchbare Outfit-Karten, starke Bildvorschauen und Links zu Maison Looks Suchergebnissen.",
+        aboutEyebrow: "Unabhängige Entdeckung",
+        aboutTitle: "Ein klarerer Weg vom Fund zur Prüfung",
+        aboutText: "Joya Grid ordnet Kategorien, visuelle Karten, QC-Hinweise, Größenangaben, Kostenplanung und Recherchewege für den Vergleich vor dem Kauf.",
         explore: "Street Style entdecken"
       },
       list: {
@@ -1109,9 +1109,9 @@
         guidesEyebrow: "Guide all'acquisto",
         guidesTitle: "Leggi prima di cercare",
         viewAll: "Vedi tutte le guide",
-        aboutEyebrow: "Modello promozionale",
-        aboutTitle: "Creato per inviare traffico style a Maison Looks",
-        aboutText: "Questo sito è uno strato leggero di scoperta: categorie curate, card outfit ricercabili, anteprime forti e link coerenti ai risultati Maison Looks.",
+        aboutEyebrow: "Scoperta indipendente",
+        aboutTitle: "Un percorso più chiaro dal find alla verifica",
+        aboutText: "Joya Grid organizza categorie, schede visive, controlli QC, taglie, costi e percorsi di ricerca per confrontare le opzioni prima dell'acquisto.",
         explore: "Esplora Street Style"
       },
       list: {
@@ -1145,9 +1145,9 @@
         guidesEyebrow: "Koopgidsen",
         guidesTitle: "Lees voordat je zoekt",
         viewAll: "Bekijk alle gidsen",
-        aboutEyebrow: "Promotiemodel",
-        aboutTitle: "Gemaakt om style-verkeer naar Maison Looks te sturen",
-        aboutText: "Deze site werkt als een lichte ontdekkingslaag: gecureerde categorieën, doorzoekbare outfitkaarten, sterke previews en consistente links naar Maison Looks-resultaten.",
+        aboutEyebrow: "Onafhankelijke ontdekking",
+        aboutTitle: "Een duidelijker pad van vondst naar controle",
+        aboutText: "Joya Grid ordent categorieën, visuele kaarten, QC-controles, maten, kosten en onderzoeksroutes om opties vóór aankoop te vergelijken.",
         explore: "Ontdek Street Style"
       },
       list: {
@@ -1181,9 +1181,9 @@
         guidesEyebrow: "Guias de compra",
         guidesTitle: "Leia antes de pesquisar",
         viewAll: "Ver todos os guias",
-        aboutEyebrow: "Modelo de promoção",
-        aboutTitle: "Criado para enviar tráfego de estilo ao Maison Looks",
-        aboutText: "Este site funciona como uma camada leve de descoberta: categorias curadas, cards de looks pesquisáveis, boas prévias visuais e links consistentes para resultados do Maison Looks.",
+        aboutEyebrow: "Descoberta independente",
+        aboutTitle: "Um caminho mais claro do achado à verificação",
+        aboutText: "Joya Grid organiza categorias, cartões visuais, verificações QC, tamanhos, custos e caminhos de pesquisa para comparar opções antes da compra.",
         explore: "Explorar Street Style"
       },
       list: {
@@ -1217,9 +1217,9 @@
         guidesEyebrow: "Købsguides",
         guidesTitle: "Læs før du søger",
         viewAll: "Se alle guides",
-        aboutEyebrow: "Promotionsmodel",
-        aboutTitle: "Bygget til at sende stiltrafik til Maison Looks",
-        aboutText: "Sitet fungerer som et let discovery-lag: kuraterede kategorier, søgbare outfitkort, stærke billedvisninger og links til Maison Looks-resultater.",
+        aboutEyebrow: "Uafhængig opdagelse",
+        aboutTitle: "En klarere vej fra fund til kontrol",
+        aboutText: "Joya Grid organiserer kategorier, visuelle kort, QC-tjek, størrelser, omkostninger og researchveje, så muligheder kan sammenlignes før køb.",
         explore: "Udforsk Street Style"
       },
       list: {
@@ -1253,9 +1253,9 @@
         guidesEyebrow: "Köpguider",
         guidesTitle: "Läs innan du söker",
         viewAll: "Se alla guider",
-        aboutEyebrow: "Promotionsmodell",
-        aboutTitle: "Byggt för att skicka stiltrafik till Maison Looks",
-        aboutText: "Sajten fungerar som ett lätt discovery-lager: kurerade kategorier, sökbara outfitkort, tydliga bildförhandsvisningar och länkar till Maison Looks-resultat.",
+        aboutEyebrow: "Oberoende upptäckt",
+        aboutTitle: "En tydligare väg från fynd till kontroll",
+        aboutText: "Joya Grid ordnar kategorier, visuella kort, QC-kontroller, storlekar, kostnader och researchvägar för jämförelse före köp.",
         explore: "Utforska Street Style"
       },
       list: {
@@ -1289,9 +1289,9 @@
         guidesEyebrow: "أدلة الشراء",
         guidesTitle: "اقرأ قبل البحث",
         viewAll: "عرض كل الأدلة",
-        aboutEyebrow: "نموذج الترويج",
-        aboutTitle: "مصمم لإرسال زيارات الموضة إلى Maison Looks",
-        aboutText: "يعمل هذا الموقع كطبقة اكتشاف خفيفة: فئات منسقة، بطاقات أزياء قابلة للبحث، معاينات صور قوية وروابط منتظمة إلى نتائج Maison Looks.",
+        aboutEyebrow: "اكتشاف مستقل",
+        aboutTitle: "مسار أوضح من العثور إلى التحقق",
+        aboutText: "ينظم Joya Grid الفئات والبطاقات المرئية وفحوصات الجودة والمقاسات والتكاليف ومسارات البحث للمقارنة قبل الشراء.",
         explore: "استكشف Street Style"
       },
       list: {
@@ -1325,9 +1325,9 @@
         guidesEyebrow: "Nákupní průvodce",
         guidesTitle: "Čtěte před hledáním",
         viewAll: "Zobrazit všechny průvodce",
-        aboutEyebrow: "Propagační model",
-        aboutTitle: "Postaveno pro posílání stylového provozu na Maison Looks",
-        aboutText: "Web funguje jako lehká discovery vrstva: kurátorované kategorie, vyhledatelné outfitové karty, silné náhledy a odkazy na výsledky Maison Looks.",
+        aboutEyebrow: "Nezávislé objevování",
+        aboutTitle: "Jasnější cesta od nálezu ke kontrole",
+        aboutText: "Joya Grid řadí kategorie, vizuální karty, QC kontroly, velikosti, náklady a rešeršní cesty pro porovnání před nákupem.",
         explore: "Prozkoumat Street Style"
       },
       list: {
@@ -1338,6 +1338,45 @@
       readGuide: "Číst průvodce"
     }
   };
+
+  // Keep product and QC wording consistent when visitors change language.
+  const evidenceCopy = {
+    en: ["Product finds and QC photos", "Find products and compare QC photos", "Browse selected MaisonLooks products, open matching buyer QC photos, and estimate costs before you buy.", "Browse by category", "Choose a product category", "Product shortlist", "Products with QC links", "No matching products", "Try another keyword or browse all categories."],
+    zh: ["商品与 QC 图片", "查找商品并对比 QC 图片", "浏览精选 MaisonLooks 商品，查看对应买家 QC 图片，并在购买前估算费用。", "按分类浏览", "选择商品分类", "商品精选", "带 QC 链接的商品", "没有匹配的商品", "换一个关键词，或浏览全部分类。"],
+    pl: ["Produkty i zdjęcia QC", "Znajdź produkty i porównaj zdjęcia QC", "Przeglądaj wybrane produkty MaisonLooks, otwieraj odpowiadające zdjęcia QC i szacuj koszty przed zakupem.", "Przeglądaj według kategorii", "Wybierz kategorię produktów", "Wybrane produkty", "Produkty z linkami QC", "Brak pasujących produktów", "Spróbuj innego hasła lub przejrzyj wszystkie kategorie."],
+    es: ["Productos y fotos QC", "Encuentra productos y compara fotos QC", "Explora productos seleccionados de MaisonLooks, abre sus fotos QC y estima los costes antes de comprar.", "Explorar por categoría", "Elige una categoría", "Selección de productos", "Productos con enlaces QC", "No hay productos coincidentes", "Prueba otra palabra o explora todas las categorías."],
+    fr: ["Produits et photos QC", "Trouvez des produits et comparez les photos QC", "Parcourez une sélection MaisonLooks, ouvrez les photos QC correspondantes et estimez les coûts avant l'achat.", "Parcourir par catégorie", "Choisissez une catégorie", "Sélection de produits", "Produits avec liens QC", "Aucun produit correspondant", "Essayez un autre mot ou parcourez toutes les catégories."],
+    de: ["Produkte und QC-Fotos", "Produkte finden und QC-Fotos vergleichen", "Entdecke ausgewählte MaisonLooks-Produkte, öffne passende QC-Fotos und schätze die Kosten vor dem Kauf.", "Nach Kategorie stöbern", "Produktkategorie wählen", "Produktauswahl", "Produkte mit QC-Links", "Keine passenden Produkte", "Versuche einen anderen Begriff oder sieh alle Kategorien an."],
+    it: ["Prodotti e foto QC", "Trova prodotti e confronta le foto QC", "Sfoglia prodotti MaisonLooks selezionati, apri le foto QC corrispondenti e stima i costi prima dell'acquisto.", "Sfoglia per categoria", "Scegli una categoria", "Selezione di prodotti", "Prodotti con link QC", "Nessun prodotto corrispondente", "Prova un altro termine o sfoglia tutte le categorie."],
+    nl: ["Producten en QC-foto's", "Vind producten en vergelijk QC-foto's", "Bekijk geselecteerde MaisonLooks-producten, open bijbehorende QC-foto's en schat kosten vóór aankoop.", "Blader per categorie", "Kies een productcategorie", "Productselectie", "Producten met QC-links", "Geen passende producten", "Probeer een ander woord of bekijk alle categorieën."],
+    pt: ["Produtos e fotos QC", "Encontre produtos e compare fotos QC", "Explore produtos MaisonLooks selecionados, abra as fotos QC correspondentes e estime os custos antes de comprar.", "Explorar por categoria", "Escolha uma categoria", "Seleção de produtos", "Produtos com links QC", "Nenhum produto correspondente", "Tente outro termo ou veja todas as categorias."],
+    da: ["Produkter og QC-fotos", "Find produkter og sammenlign QC-fotos", "Se udvalgte MaisonLooks-produkter, åbn matchende QC-fotos, og beregn omkostninger før køb.", "Se efter kategori", "Vælg en produktkategori", "Produktudvalg", "Produkter med QC-links", "Ingen matchende produkter", "Prøv et andet ord, eller se alle kategorier."],
+    sv: ["Produkter och QC-foton", "Hitta produkter och jämför QC-foton", "Bläddra bland utvalda MaisonLooks-produkter, öppna matchande QC-foton och uppskatta kostnader före köp.", "Bläddra efter kategori", "Välj en produktkategori", "Produkturval", "Produkter med QC-länkar", "Inga matchande produkter", "Prova ett annat ord eller visa alla kategorier."],
+    ar: ["منتجات وصور فحص الجودة", "اعثر على المنتجات وقارن صور فحص الجودة", "تصفح منتجات مختارة من MaisonLooks وافتح صور فحص الجودة المطابقة وقدّر التكلفة قبل الشراء.", "تصفح حسب الفئة", "اختر فئة المنتج", "منتجات مختارة", "منتجات مع روابط فحص الجودة", "لا توجد منتجات مطابقة", "جرّب كلمة أخرى أو تصفح كل الفئات."],
+    cs: ["Produkty a QC fotografie", "Najděte produkty a porovnejte QC fotografie", "Procházejte vybrané produkty MaisonLooks, otevřete odpovídající QC fotografie a odhadněte náklady před nákupem.", "Procházet podle kategorie", "Vyberte kategorii", "Výběr produktů", "Produkty s odkazy na QC", "Žádné odpovídající produkty", "Zkuste jiný výraz nebo projděte všechny kategorie."]
+  };
+  const trustFooters = {
+    en: "JoyaGrid is independent. Product details and QC previews come from linked MaisonLooks pages; confirm current information before buying.",
+    zh: "JoyaGrid 为独立站点。商品信息和 QC 预览来自所链接的 MaisonLooks 页面；购买前请确认最新信息。",
+    pl: "JoyaGrid jest niezależny. Dane produktów i podglądy QC pochodzą z podlinkowanych stron MaisonLooks; przed zakupem sprawdź aktualne informacje.",
+    es: "JoyaGrid es independiente. Los datos y las vistas QC proceden de las páginas enlazadas de MaisonLooks; confirma la información actual antes de comprar.",
+    fr: "JoyaGrid est indépendant. Les détails et aperçus QC proviennent des pages MaisonLooks liées ; vérifiez les informations actuelles avant l'achat.",
+    de: "JoyaGrid ist unabhängig. Produktdetails und QC-Vorschauen stammen von verlinkten MaisonLooks-Seiten; prüfe aktuelle Angaben vor dem Kauf.",
+    it: "JoyaGrid è indipendente. Dettagli e anteprime QC provengono dalle pagine MaisonLooks collegate; verifica le informazioni attuali prima dell'acquisto.",
+    nl: "JoyaGrid is onafhankelijk. Productgegevens en QC-voorbeelden komen van gekoppelde MaisonLooks-pagina's; controleer actuele informatie vóór aankoop.",
+    pt: "A JoyaGrid é independente. Detalhes e prévias QC vêm das páginas MaisonLooks vinculadas; confirme as informações atuais antes de comprar.",
+    da: "JoyaGrid er uafhængig. Produktoplysninger og QC-forhåndsvisninger kommer fra linkede MaisonLooks-sider; kontrollér aktuelle oplysninger før køb.",
+    sv: "JoyaGrid är oberoende. Produktuppgifter och QC-förhandsvisningar kommer från länkade MaisonLooks-sidor; kontrollera aktuell information före köp.",
+    ar: "JoyaGrid موقع مستقل. تأتي تفاصيل المنتجات ومعاينات فحص الجودة من صفحات MaisonLooks المرتبطة؛ تحقق من المعلومات الحالية قبل الشراء.",
+    cs: "JoyaGrid je nezávislý. Údaje o produktech a náhledy QC pocházejí z odkazovaných stránek MaisonLooks; před nákupem ověřte aktuální informace."
+  };
+  for (const [lang, values] of Object.entries(evidenceCopy)) {
+    const t = copy[lang].home;
+    [t.heroEyebrow, t.heroTitle, t.heroText, t.categoriesEyebrow, t.categoriesTitle, t.findsEyebrow, t.findsTitle, t.emptyTitle, t.emptyText] = values;
+    copy[lang].brandSub = values[0];
+    copy[lang].footer = trustFooters[lang];
+    copy[lang].footerArticles = trustFooters[lang];
+  }
 
   const navLabels = {
     en: {
@@ -1579,7 +1618,7 @@
     const labels = navLabels[lang] || navLabels.en;
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-    document.querySelectorAll(".brand small:not(.brand-tagline)").forEach((node) => {
+    document.querySelectorAll(".brand small").forEach((node) => {
       node.textContent = t.brandSub;
     });
     document.querySelectorAll("nav a").forEach((node) => {
@@ -1605,8 +1644,10 @@
     setText(".hero h1", t.heroTitle);
     setText(".hero p:not(.eyebrow)", t.heroText);
     setText(".hero-actions .button.primary", t.browse);
-    document.querySelectorAll(".hero-actions .button.ghost").forEach((node, index) => {
-      node.textContent = index === 0 ? t.searchMaison : t.browse;
+    document.querySelectorAll(".hero-actions .button.ghost").forEach((node) => {
+      const path = normalizedPath(node.getAttribute("href") || "");
+      if (path === "/agent-shopping-cost-calculator") return;
+      node.textContent = path === "/finds" ? t.browse : t.searchMaison;
     });
     setText("#categories .eyebrow", t.categoriesEyebrow);
     setText("#categories h2", t.categoriesTitle);
@@ -1670,7 +1711,11 @@
     const t = copy[lang] || copy.en;
     const blogLabel = (navLabels[lang] || navLabels.en)["/blog"];
     setText(".article-hero .eyebrow", blogLabel === "Blog" ? "Joya Grid blog" : blogLabel);
-    setText(".article-hero h1", `${t.home.heroTitle} ${blogLabel}`);
+    const blogTitles = {
+      en: "Product finds and buying notes",
+      zh: "商品发现与购买笔记"
+    };
+    setText(".article-hero h1", blogTitles[lang] || t.list.title);
     setText(".article-hero p:not(.eyebrow)", t.list.intro);
     document.querySelectorAll(".guide-list-item a").forEach((node) => {
       node.textContent = t.readGuide;
@@ -1737,19 +1782,19 @@
         const number = count.textContent.match(/\d+/);
         if (number) {
           const label = {
-            en: Number(number[0]) === 1 ? "find" : "finds",
-            zh: "finds",
-            pl: Number(number[0]) === 1 ? "find" : "findy",
-            es: Number(number[0]) === 1 ? "find" : "finds",
-            fr: Number(number[0]) === 1 ? "find" : "finds",
-            de: Number(number[0]) === 1 ? "Find" : "Finds",
-            it: Number(number[0]) === 1 ? "find" : "finds",
-            nl: Number(number[0]) === 1 ? "find" : "finds",
-            pt: Number(number[0]) === 1 ? "find" : "finds",
-            da: Number(number[0]) === 1 ? "find" : "finds",
-            sv: Number(number[0]) === 1 ? "find" : "finds",
-            ar: "finds",
-            cs: Number(number[0]) === 1 ? "find" : "findy"
+            en: Number(number[0]) === 1 ? "product" : "products",
+            zh: "件商品",
+            pl: Number(number[0]) === 1 ? "produkt" : "produkty",
+            es: Number(number[0]) === 1 ? "producto" : "productos",
+            fr: Number(number[0]) === 1 ? "produit" : "produits",
+            de: Number(number[0]) === 1 ? "Produkt" : "Produkte",
+            it: Number(number[0]) === 1 ? "prodotto" : "prodotti",
+            nl: Number(number[0]) === 1 ? "product" : "producten",
+            pt: Number(number[0]) === 1 ? "produto" : "produtos",
+            da: Number(number[0]) === 1 ? "produkt" : "produkter",
+            sv: Number(number[0]) === 1 ? "produkt" : "produkter",
+            ar: "منتج",
+            cs: Number(number[0]) === 1 ? "produkt" : "produkty"
           };
           const countText = `${number[0]} ${label[lang] || label.en}`;
           if (count.textContent !== countText) count.textContent = countText;
@@ -1793,12 +1838,20 @@
       .join("");
   }
 
+  const initialArticleBody = document.querySelector(".article-body");
+  const initialArticleBodyMarkup = initialArticleBody ? initialArticleBody.innerHTML : "";
+
   function renderArticlePage(lang) {
     const body = document.querySelector(".article-body");
     if (!body) return;
     const slug = location.pathname.split("/").pop().replace(".html", "");
     const article = articleBySlug[slug];
     if (!article) return;
+    if (lang === "en" && initialArticleBodyMarkup) {
+      body.innerHTML = initialArticleBodyMarkup;
+      document.title = `${article.title.en} - JoyaGoo Spreadsheet Guide`;
+      return;
+    }
     const articleBody = (article.body[lang] || article.body.en);
     const sections = articleBody.sections
       .map(([heading, text]) => `<h2>${escapeHtml(heading)}</h2><p>${escapeHtml(text)}</p>`)
@@ -1943,5 +1996,15 @@
       }).observe(node, { childList: true, subtree: true });
     });
     if (productGrid || categoryTabs) translateFinds(getLang());
+
+    const sectionId = new URLSearchParams(window.location.search).get("section");
+    const section = sectionId ? document.getElementById(sectionId) : null;
+    if (section) {
+      window.requestAnimationFrame(() => {
+        section.scrollIntoView({ block: "start" });
+        if (!section.hasAttribute("tabindex")) section.setAttribute("tabindex", "-1");
+        section.focus({ preventScroll: true });
+      });
+    }
   });
 })();

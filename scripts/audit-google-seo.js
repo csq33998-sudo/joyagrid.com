@@ -35,9 +35,15 @@ if (fs.existsSync("robots.txt")) {
 if (fs.existsSync("sitemap.xml")) {
   const sitemap = fs.readFileSync("sitemap.xml", "utf8");
   for (const file of htmlFiles) {
+    const html = fs.readFileSync(file, "utf8");
+    const robots = textBetween(html, /<meta\s+name=["']robots["']\s+content=["']([^"']+)["']/i).toLowerCase();
     const route = routePages.includes(file) ? file.replace(/\.html$/, "") : file.replace(/\\/g, "/");
     const url = file === "index.html" ? `${baseUrl}/` : `${baseUrl}/${route}`;
-    check(sitemap.includes(`<loc>${url}</loc>`), `sitemap.xml missing ${url}`);
+    if (robots.includes("noindex")) {
+      check(!sitemap.includes(`<loc>${url}</loc>`), `sitemap.xml should exclude noindex URL ${url}`);
+    } else {
+      check(sitemap.includes(`<loc>${url}</loc>`), `sitemap.xml missing indexable URL ${url}`);
+    }
   }
 }
 
@@ -46,24 +52,13 @@ for (const file of htmlFiles) {
   const title = textBetween(html, /<title>(.*?)<\/title>/i);
   const h1 = textBetween(html, /<h1[^>]*>(.*?)<\/h1>/i);
   const canonical = textBetween(html, /<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i);
-  const text = html
-    .replace(/<script[\s\S]*?<\/script>/gi, " ")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/\s+/g, " ")
-    .toLowerCase();
-  const joyagooCount = (text.match(/joyagoo/g) || []).length;
-  const spreadsheetCount = (text.match(/spreadsheet/g) || []).length;
   const schemas = jsonLdBlocks(html);
 
   check(canonical.startsWith(baseUrl), `${file} canonical should use ${baseUrl}`);
   check(schemas.length > 0, `${file} missing JSON-LD structured data`);
-  check(joyagooCount >= 1, `${file} should mention JoyaGoo in visible text`);
-  check(spreadsheetCount >= 1, `${file} should mention spreadsheet in visible text`);
   warn(title.length <= 65, `${file} title is long for search result display (${title.length})`);
 
   if (file === "index.html") {
-    check(/JoyaGoo Spreadsheet/i.test(title), "index title should lead with JoyaGoo Spreadsheet");
-    check(/JoyaGoo Spreadsheet/i.test(h1), "index h1 should be JoyaGoo Spreadsheet");
     check(JSON.stringify(schemas).includes('"WebSite"'), "index should include WebSite schema");
   } else if (["finds.html", "categories.html", "guides.html", "joyagoo-spreadsheet-news.html"].includes(file)) {
     check(JSON.stringify(schemas).includes('"CollectionPage"'), `${file} should include CollectionPage schema`);

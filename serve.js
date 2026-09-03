@@ -35,6 +35,7 @@ function resolveFile(urlPath) {
     ["guides", "guides.html"],
     ["agent-shopping-cost-calculator", "agent-shopping-cost-calculator.html"],
     ["joyagoo-buying-guide", "joyagoo-buying-guide.html"],
+    ["qc", "qc.html"],
     ["joyagoo-spreadsheet", "joyagoo-spreadsheet.html"],
     ["joyagoo-spreadsheet-news", "joyagoo-spreadsheet-news.html"]
   ]);
